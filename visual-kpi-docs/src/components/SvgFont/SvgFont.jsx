@@ -12,7 +12,7 @@ export default function SvgFont({ data, position, size }) {
     <span className="svg_container">
       <svg className="hidesvg" version="1.1" xmlns="http://www.w3.org/1999/xlink">
         <defs>
-          <symbol id={data.properties.name} width={size} viewBox={`0 0 ${position}`}>
+          <symbol id={data.properties.name} width={size} viewBox={`0 0 ${position || "1024 1024"}`}>
             <title>test</title>
             <path className="path1" d={path}></path>
           </symbol>
