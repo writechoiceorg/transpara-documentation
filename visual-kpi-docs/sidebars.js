@@ -319,6 +319,11 @@ const sidebars = {
     },
     {
       type: 'doc',
+      id: 'supporting-pages/mapped-icons',
+      label: 'Mapped Icons',
+    },
+    {
+      type: 'doc',
       id: 'supporting-pages/faq',
       label: 'FAQ',
     },
@@ -337,8 +342,7 @@ const sidebars = {
       type: 'doc',
       id: 'supporting-pages/glossary',
       label: 'Glossary',
-    },
-    
+    },    
   ],
 };
 
