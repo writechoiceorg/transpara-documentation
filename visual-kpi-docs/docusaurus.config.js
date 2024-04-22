@@ -132,7 +132,7 @@ const config = {
           alt: 'Site Logo',
           src: 'img/logo-new.png',
           className: 'site_logo',
-          href: 'https://www.transpara.com/',
+          href: '/',
           // target: '_self',
         },
         items: [
