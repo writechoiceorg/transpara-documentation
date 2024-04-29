@@ -50,14 +50,52 @@ To remove the contact place an **x** first column for each contact you want to d
 
 ### Configure Alerts
 
-When working with KPIs, you can select the name of an alert template in a pull-down, appling all of the alert attributes assigned to that template. You can create as many Alert Templates as you want. Open the Alert Templates worksheet by clicking the sitewide Settings configuration icon (add icon) and select **Contacts & Alerts** and then **Alert Templates**.
+Alert templates in Visual KPI are designed to provide a flexible and powerful way to manage and customize alerts for KPIs. These templates allow users to define a specific set of parameters and rules for alert conditions, which can then be applied across various KPIs. This capability ensures that users receive timely and relevant notifications based on predefined criteria.
+
+To create or edit alert templates, navigate to the Alert Templates section:
+
+1. Click on the Site Settings icon (<PngFont name='options28' />).
+2. Select **Contacts & Alerts**.
+3. Then, select **Alert Templates**.
+
+On the **Alert Templates** worksheet, you find all existing alert templates. When adding a new template, you have several configurations you need to define. Following you find a description for each category available.
+
+- **Basics**: Configure **Name** and **Description** for the alert template to identify its purpose and conditions.
+- **Timers**: Determines the duration that a KPI must consistently exhibit a particular state before triggering an alert and the frequency at which alert reminders are sent.
+- **Alert Silence**: Controls if notifications are silenced. It can be controlled through interfaces or variables, and you can add a contact to receive a notification when an alert trigger is silenced.
+- **State Notification***: You can configure different alerts for each of the available statuses, including custom statuses you can create. For each status you can define if the status will generate an alert, if reminders will be sent if the status persists, and who will receive the notification. Below you find the available status for you can configure notifications for:
+  - Low Low Low
+  - Low Low
+  - Low
+  - Good
+  - High
+  - High High
+  - High High High
+  - Out of Range
+  - Not in Service
+  - NA
+  - Custom Status
+
+:::note Basic and Advanced Modes
+
+If you're not finding a specific option while configuring Alert Templates, check if you're in the Basic Mode (<PngFont name='advancedmode28gray' />) or the Advanced Mode (<PngFont name='advancedmodereddot28gray' />). In the Basic Mode, some options are hidden.
+
+:::
+
+:::info Alerts Reference Tables
+
+See the [Alerts Reference](/docs/reference/visual-kpi-designer/site-settings/alerts) page to have a complete description of all available configurations while setting up an Alert Template. You find the same information on the worksheet by clicking on any of the header cells.
+
+:::
+
+When working with KPIs, you can select the name of an alert template in a pull-down, applying all of the alert attributes assigned to that template. You can create as many Alert Templates as you want. Open the Alert Templates worksheet by clicking the sitewide Settings configuration icon (add icon) and select **Contacts & Alerts** and then **Alert Templates**.
 
 <StylizedImage
   imgURL="img/site-settings/alerttemplate-worksheet.png"
   alt="Alert Template Worksheet"
 />
 
-Click **New Alert Template** (add icon) for a new row with the default alert settings, but you can change the values in any cell.  Click any of the header cells in the worksheet to get more information about each alert attribute. Click the **Membership of Selected Alert Templates** icon (add icon) to show each KPI that has an alert assigned, along with the name of the Alert Template assigned to it.
+Click **New Alert Template** (add icon) for a new row with the default alert settings, but you can change the values in any cell. Click any of the header cells in the worksheet to get more information about each alert attribute. Click the **Membership of Selected Alert Templates** icon (add icon) to show each KPI that has an alert assigned, along with the name of the Alert Template assigned to it.
 
 <StylizedImage
   imgURL="img/site-settings/alertmembership-worksheet.png"
