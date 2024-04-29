@@ -3,10 +3,27 @@ id: overview
 title: Overview
 slug: /setup-and-administration
 description: 'Presents the overview of administrator user and the steps to configure Visual KPI.'
-tags: []
+tags: ['documentation']
 ---
 
-- Presents the overview of administrator user
-- The preparation and installation steps
-- Interfaces configuration and Data sources
-- Automation
+import LinkCards from '@site/src/components/Cards/LinkCards';
+
+For Transpara, the Administrator is from the IT team, responsible for the Visual KPI integration, covering the system preparation and installation. The Setup and Administration documentation covers all steps required to download and install Visual KPI in the local or cloud environments. In addition, you also find the documentation on how to use interfaces to connect data sources to Visual KPI or automate the process using the Remote Context Server (RCS). Use the cards to access the desired content.
+
+
+<LinkCards data={
+  [
+    {
+      name: 'Installation',
+      linkTo: '/docs/setup-and-administration/installation/overview'
+    },
+    {
+      name: 'Interfaces',
+      linkTo: '/docs/setup-and-administration/interfaces'
+    },
+    {
+      name: 'Automation',
+      linkTo: '/docs/setup-and-administration/automation'
+    }
+  ]
+}/>

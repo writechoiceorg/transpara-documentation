@@ -1,0 +1,7 @@
+[
+  {
+    "Method": "IN(string ItemToFind, string ListItem1, string ListItem2, \u00e2\u20ac\u00a6) IN(string\n          ItemToFind,\n          string[] ListItem)",
+    "Return Type": "boolean",
+    "Description": "Looks for ItemToFind in the specified list of items. Returns true if item is found in the\n        list, false otherwise."
+  }
+]

@@ -102,7 +102,7 @@
     },
     {
       "name": "ODBC",
-      "description": "Open Database Connectivity. It is a standard programming interface for accessing and managing databases. ODBC allows applications to interact with various database management systems (DBMS) using a common method, regardless of the specific DBMS being used. "
+      "description": "Open Database Connectivity. it's a standard programming interface for accessing and managing databases. ODBC allows applications to interact with various database management systems (DBMS) using a common method, regardless of the specific DBMS being used. "
     }
   ]
 }

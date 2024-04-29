@@ -1,0 +1,72 @@
+---
+id: bar-chart
+title: Bar Chart
+slug: bar-chart
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+Bar charts can be used to show comparisons of data against targets and limits in either a vertical or horizontal chart.
+
+You can compare only one specific set of data, where each bar represents the data, or you can cluster sets of data so that each specific set of data has its own bar, but the related sets are clustered and compared against other clustered data.
+
+<StylizedImage
+  imgURL="img/designer/barchart-enduser.png"
+  alt="Bar Chart End User"
+/>
+
+## Define Bar Chart Attributes
+
+After you have created and configured some basic attributes for a chart, you can begin to design the look of the chart. Here, we show you the basic attributes that you need to set in order design a basic bar chart. To see all of the possible attributes you can configure, see Charts Attributes & Keywords Reference Guide.
+
+1. **Bar chart name**: Name your chart.
+2. **X and Y axes labels**: Name the X and Y axes, as these labels will appear on the chart to identify the data represented.
+3. **Query Chart Type**: Decide how you want to cluster data, or not.
+4. **Chart Orientation**: Select either vertical or horizontal orientation.
+5. **Bar name and interface**: You can add up to 20 bars. o add data to your chart, you add a value, calculation and/or interface for each bar. Or you can also use queries and Connect Strings to connect to an SQL database.
+6. **Info display format**: Use the pulldown menu to decide if the data information should be numbers, units of measure, or both.
+
+<StylizedImage
+  imgURL="img/designer/charts-attributes.png"
+  alt="Chart Attributes"
+/>
+
+## Design Charts with Targets & Visualizations
+
+You have the option to add targets and baselines to your chart to add more meaning to the data. For example, if you create a chart to show yield for manufacturing plants, you may set a baseline of minimum acceptable yield and a target for expected yield.
+
+### Set a Target and/or Baseline
+
+Targets can be entered as values, or returned from an interface. To enter a value, use the Target column, otherwise use the Target Interface column to select a previously defined interface.
+
+You can add up to 5 additional lines to each chart.
+
+:::note Formulas in Charts
+
+Formulas and Functions can be used in the Target and Baseline attribute columns.
+
+:::
+
+### Give the Target a Name and Color
+
+The **Target Name**, if you decide to use one, displays as a tooltip when you hover over the line in the chart.
+
+**Target Color** adds color to the Target line. Use the pulldown menu to select a color.
+
+### Add Conditional Coloring
+
+**Conditional Coloring** allows you to change the color of the bar above and below the Target line based on the value comparison.
+
+**Above Target Color** and **Below Target Color** allow you to select those Conditional Colors, and you can name each in the **Above** and **Below Target Name**.
+
+For example, if you set targets for performance, you can set the color to green above the target line and use Pass as an Above Target Name.
+
+<StylizedImage
+  imgURL="img/designer/charts-coloring.png"
+  alt="Charts Coloring"
+/>

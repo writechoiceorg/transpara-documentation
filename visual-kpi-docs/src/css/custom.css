@@ -108,7 +108,7 @@
 .pagination-nav__link {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   flex-shrink: 0;
   border-radius: 13px;
   border: 1px solid #acacac;
@@ -148,21 +148,28 @@
   color: #fff !important;
 }
 
+.pagination-nav__link--next .pagination-nav__label {
+  text-align: start;
+}
+
+.pagination-nav__link--prev .pagination-nav__label {
+  text-align: end;
+}
+
 .pagination-nav__link--next .pagination-nav__label:after {
   content: '🡢' !important;
   position: absolute;
   right: 16px;
-  top: 35%;
+  top: 12px;
 }
 
 .pagination-nav__link--prev .pagination-nav__label:before {
   content: '🡠' !important;
   position: absolute;
   left: 16px;
-  top: 35%;
+  top: 12px;
 }
 
-/* pagination-nav__link--next */
 /*-------------------------------- Markdown Header sizes ------------------------------  */
 
 .markdown h1 {
@@ -184,40 +191,4 @@
 
 .python-interface-logo {
   cursor: pointer !important;
-}
-
-/*-------------------------------- Tables configuration ------------------------------  */
-
-table {
-  width: fit-content;
-  margin: auto;
-  margin-bottom: var(--ifm-spacing-vertical);
-}
-
-table thead th {
-  background-color: #ddd7e9;
-  border: none;
-  text-align: left;
-}
-
-table tr {
-  width: 100%;
-}
-
-table tr td {
-  background-color: #ffffff;
-  border: none;
-}
-
-table thead,
-table tbody {
-  border: 1px solid #ddd7e9;
-}
-
-table thead tr {
-  border: 0 !important;
-}
-
-table {
-  font-size: small;
 }

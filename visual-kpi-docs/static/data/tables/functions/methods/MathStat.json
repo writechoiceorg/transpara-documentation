@@ -1,0 +1,290 @@
+[
+  {
+    "Method": "ABS(double)",
+    "Return Type": "double",
+    "Description": "Absolute value",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "ACOS(double)",
+    "Return Type": "double",
+    "Description": "Arccosine",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "ACOT(double)",
+    "Return Type": "double",
+    "Description": "Arccotangent",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "ACSC(double)",
+    "Return Type": "double",
+    "Description": "Arccosecant",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "ASEC(double)",
+    "Return Type": "double",
+    "Description": "Arcsecant",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "ASIN(double)",
+    "Return Type": "double",
+    "Description": "Arcsine",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "ATAN(double)",
+    "Return Type": "double",
+    "Description": "Arctangent",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "AVERAGE(double, double, ...)",
+    "Return Type": "double",
+    "Description": "Returns the average (arithmetic mean) of the arguments.",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "CEIL(double)",
+    "Return Type": "double",
+    "Description": "The smallest integer greater than or equal to the specified number.",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "COS(double)",
+    "Return Type": "double",
+    "Description": "The cosine of the given angle (in radians).",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "COSH(double)",
+    "Return Type": "double",
+    "Description": "Hyperbolic cosine",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "COT(double)",
+    "Return Type": "double",
+    "Description": "Cotangent",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "COTH(double)",
+    "Return Type": "double",
+    "Description": "Hyperbolic cotangent",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "COUNT(double, double, ...) COUNT(double[ ])",
+    "Return Type": "double",
+    "Description": "Total count of parameters passed",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "CSC(double)",
+    "Return Type": "double",
+    "Description": "Cosecant",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "CSCH(double)",
+    "Return Type": "double",
+    "Description": "Hyperbolic cosecant",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "EXP(double)",
+    "Return Type": "double",
+    "Description": "E (the base of natural logarithms) raised to the specified power",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "FLOOR(double) INT(double)",
+    "Return Type": "double",
+    "Description": "The greatest integer less than or equal to the specified number",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "FORMAT(double, string style)",
+    "Return Type": "String",
+    "Description": "Returns a string expression formatted according to instructions contained in a format string\n        expression. For information on how to create the style argument, see the appropriate topic at MSDN:\n        Predefined Numeric Formats User-Defined Numeric Formats",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "LN(double)",
+    "Return Type": "double",
+    "Description": "Natural logarithm",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "LOG(double, double base)",
+    "Return Type": "double",
+    "Description": "Logarithm to the specified base",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "LOG10(double)",
+    "Return Type": "double",
+    "Description": "Logarithm to base 10",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "MAX(double, double, ...) MAX(double[ ])",
+    "Return Type": "double",
+    "Description": "Maximum",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "MIN(double, double, ...) MIN(double[ ])",
+    "Return Type": "double",
+    "Description": "Minimum",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "NEG(double)",
+    "Return Type": "double",
+    "Description": "Negation",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "POWER(double, double power)",
+    "Return Type": "double",
+    "Description": "The specified number raised to the specified power",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "RAND([double max])",
+    "Return Type": "double",
+    "Description": "Random number between 0 and max. If max is undefined then RAND() returns random number\n        between 0 and 1.",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "ROUND(double d, [int decimals])",
+    "Return Type": "double",
+    "Description": "Returns the number with the specified precision nearest the specified value.",
+    "Parameters": "d: A number to be rounded. decimals: The number of significant fractional digits\n        (precision) in the return value. Ranges from 0 to 28.",
+    "Return Value": "The number nearest d with precision equal to decimals. If d is halfway between two numbers,\n        one of which is even and the other odd, then the even number is returned. If the precision of d is less than\n        decimals, then d is returned unchanged.",
+    "Remarks": "The decimals parameter specifies the number of significant fractional digits in the return\n        value and ranges from 0 to 28. If decimals is zero, then a whole number is returned. This kind of rounding is\n        sometimes called rounding to nearest, or banker's rounding."
+  },
+  {
+    "Method": "SEC(double)",
+    "Return Type": "double",
+    "Description": "Secant",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "SECH(double)",
+    "Return Type": "double",
+    "Description": "Hyperbolic secant",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "SIN(double)",
+    "Return Type": "double",
+    "Description": "The sine of the given angle (in radians).",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "SINH(double)",
+    "Return Type": "double",
+    "Description": "Hyperbolic sine",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "SQRT(double)",
+    "Return Type": "double",
+    "Description": "Square root",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "SUM(double, double, ...) SUM(double[ ]) ",
+    "Return Type": "double",
+    "Description": "Sum of the specified numbers",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "TAN(double)",
+    "Return Type": "double",
+    "Description": "Tangent",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  },
+  {
+    "Method": "TANH(double)",
+    "Return Type": "double",
+    "Description": "Hyperbolic tangent",
+    "Parameters": "",
+    "Return Value": "",
+    "Remarks": ""
+  }
+]

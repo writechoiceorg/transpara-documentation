@@ -1,0 +1,76 @@
+---
+id: xy-plots
+title: XY Plots
+slug: xy-plots
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+Create and configure XY Plots, or scatter charts, to show the relationships between two sets of data. For example, you could show the temperature outside related to how many ice creams were sold. A better example for Visual KPI may be measuring wind speed against power.
+
+XY plots can be based on time or not.
+
+<StylizedImage
+  imgURL="img/designer/charts-xyplot-enduser.png"
+  alt="XY Plot End User"
+/>
+
+## Define Bar Chart Attributes
+
+After you have created and configured some basic attributes for a chart, you can begin to add data to the chart. Here, we show you the basic attributes that you need to set in order design a basic XY plot. To see all of the possible attributes you can configure, see Charts Attributes & Keywords Reference Guide.
+
+### Name X and Y Axes
+
+Name the X and Y axes, as these labels will appear on the chart to identify the data represented. For example, the Non Time Series chart above shows Power and Wind Speed as the X and Y axes.
+
+### Enter Values and/or Interface
+
+Visual KPI uses Pens to display the points on the plot. To add data to your chart, you add a value, calculation and/or interface for each pen and for each X and Y point.
+
+You can have up to 20 pens for each chart.
+
+<StylizedImage
+  imgURL="img/designer/charts-xyplot-worksheet.png"
+  alt="XY Plot Worksheet"
+/>
+
+### Name and Color Pens
+
+For each pen on the XY plot,  you can select a color using the pull-down menu. Otherwise, Visual KPI will define default pen colors.
+
+Then you can assign a name to each pen to show as a label in Visual KPI. The pen name displays when you hover over it in your Visual KPI chart.
+
+### Select Time Series or Not
+
+Time series determines how the XY data correlates on the plot. If time series is set to TRUE, then X values are interpolated to match the X value; otherwise, if set to FALSE, X and Y pairs are determined based on the order in which they are returned by the interface. Set Time Series to TRUE or FALSE for each pen on the XY plot.
+
+<StylizedImage
+  imgURL="img/designer/charts-xyplot-series-enduser.png"
+  alt="XY Plot Time Series End User"
+/>
+
+### Add Fit Line to Plot Contents
+
+If you want your XY plot to show linear regression, you can plot a fit line and select which data the line should follow. A fit line can help you see whether two sets of data correlate and can be used to help identify trends within the data.
+
+In the Non Time Series XY plot at the top of this page, the fit line is set to plot the Y data. In Visual KPI Designer, use the Plot Contents attribute to set the Fit Line for each pen.
+
+### Select Default Start/End Times and Interface
+
+For each XY plot, you can choose to return data from an interface and select the default start and end times you want to initially show to users on your Visual KPI site.
+
+Remember, you can use the Time Range picker in Visual KPI sites to change the time ranges shown on a chart. The time range can be changed to show data as far back as it exists.
+
+<StylizedImage
+  imgURL="img/designer/charts-xyplot-time.png"
+  alt="XY Plot Time"
+/>
+
+
+
+

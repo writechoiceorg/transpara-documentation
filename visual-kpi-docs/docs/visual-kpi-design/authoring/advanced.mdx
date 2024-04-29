@@ -1,0 +1,78 @@
+---
+id: advanced
+title: Advanced
+slug: advanced
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+Visual KPI comes with standard attributes out of the box. These attributes are defined by default, but you can define custom attributes in Visual KPI Designer using the Advanced Attributes feature. 
+
+### Attributes
+
+Custom attributes are additional categories of information that will be associated with your data, allowing you to customize the definition of each object type. Clicking Settings, Advanced and Attributes you can configure up to 20 custom attributes sitewide using Visual KPI Designer. An attribute definition includes an Attribute Name, Description, and Default Values. The Default Values are presented as a list in a pull-down menu within your KPI data definitions, allowing you to select one of the default members.
+
+<StylizedImage
+  imgURL="img/site-settings/attributes-worksheet.png"
+  alt="Attributes Worksheet"
+/>
+
+To add an attribute, first enter its Attribute Name and a Description if necessary. Then, in the Default Values column, enter the default members of the list, separated by semicolons. Default Values are displayed in a list form in the attribute's column in the KPI Data worksheets. Only in the Visual KPI Designer. The Reference Count is automatically updated each time you open the Attributes, indicating the number of selection queries that reference the attribute.
+
+
+:::note Naming Attributes 
+
+Use caution when naming your attributes. don't use the same name for multiple attributes.
+
+:::
+
+Click the Membership of Selected Attributes icon (add icon member) in the Attributes configuration toolbar to open a new worksheet that shows each attribute and all KPIs associated with the attribute.
+
+<StylizedImage
+  imgURL="img/site-settings/attributesmembership-worksheet.png"
+  alt="Attributes Membreship Worksheet"
+/>
+
+### Language
+
+Currently, Visual KPI has three language options: English, German, Spanish, Arabic and Simplified Chinese.  You can use this worksheet to translate the User Interface into a language you choose. Use the Site Settings icon (add icon gear) to open Advanced and then Languages.
+
+<StylizedImage
+  imgURL="img/site-settings/language-worksheet.png"
+  alt="Language Worksheet"
+/>
+
+It will open a list of every User Interface text that you'll find in your Visual KPI site that you can translate and edit. Once you've added a language in Visual KPI Designer, the new language will appear in Visual KPI Server Manager. You can then select the language you want to display in your Visual KPI sites. 
+
+However, in some cases, you'll see variables [X] in Visual KPI strings. You don't want to translate the variable because it's a placeholder for text that's returned.
+
+:::unique Sharing is Caring
+
+If you want to share your translated strings with us, we would really appreciate it. We may incorporate them into a future release of Visual KPI.
+
+:::
+
+### KPI Nav Bar links
+
+There are many places you can add links in Visual KPI. And you can link to just about anything, whether it's to another object in Visual KPI, a Dashboard, or an external link. You can even add links to the Visual KPI Nav Bar, which are called Nav Bar Links.
+
+<StylizedImage
+  imgURL="img/site-settings/navlink-enduser.png"
+  alt="Nav Bar Link End User View"
+/>
+
+Use the Site Settings icon ( add icon gear ) to access Advanced/Nav Bar Links. Add the **Name**, a **Description** (optional), copy the **URL**, and use the pulldown menu to Show **TRUE**. You can change this attribute to FALSE if you don't want the link to display later.
+
+<StylizedImage
+  imgURL="img/site-settings/navlink-worksheet.png"
+  alt="Nav Bar Link Worksheet"
+/>
+
+#### Best Practices
+
+These links will appear in the Nav Bar, sitewide, and can be viewed by every profile with access to the Visual KPI site. You should keep the Name of Nav Bar links to 10 characters or less, or your text may get truncated. Additionally, don't add too many Nav Bar links, or your users will have to scroll vertically to see all of the Nav Bar. You can also add links within objects (such as KPIs), in the Bookmark Bar, or as a Custom Dashboard widget.

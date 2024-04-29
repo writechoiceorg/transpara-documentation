@@ -9,7 +9,7 @@
   },
   {
     "Attribute": "URL",
-    "Description": "The server URL used to invoke the Interface methods (these URLs do not need to be accessed outside the server)."
+    "Description": "The server URL used to invoke the Interface methods (these URLs don't need to be accessed outside the server)."
   },
   {
     "Attribute": "Authentication Method",

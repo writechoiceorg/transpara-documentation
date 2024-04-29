@@ -191,6 +191,12 @@ const cardsContent = [
     route: "https://www.transpara.com/training/",
     imageClass: "image5",
   },
+  {
+    title: "FAQ",
+    content: "Access Transpara Visual KPI to find answers for your questions.",
+    route: "/docs/faqs/",
+    imageClass: "image6",
+  },
 ]
 
 export default function Home() {

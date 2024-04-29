@@ -1,0 +1,52 @@
+[
+  {
+    "Method": "Concat(object1, object2, \u00e2\u20ac\u00a6 objectN)",
+    "Return Type": "string",
+    "Description": "Returns a single concatenated string from a list of strings. doubles, ints, booleans."
+  },
+  {
+    "Method": "ConcatSep(object1, object2, \u00e2\u20ac\u00a6 objectN, string delimiter)",
+    "Return Type": "string",
+    "Description": "Returns a single concatenated and delimited string from a list of strings. doubles, ints,\n        booleans"
+  },
+  {
+    "Method": "Find(string textToFind, string textToSearch, int startIndex)",
+    "Return Type": "int",
+    "Description": "Returns the zero-based index of the first occurrence of a textToFind, within a textToSearch\n        string. The search starts at a specified character position (zero-based)."
+  },
+  {
+    "Method": "Left(string, int nCount)",
+    "Return Type": "string",
+    "Description": "Returns the first (leftmost) nCount characters from a string."
+  },
+  {
+    "Method": "Len(string)",
+    "Return Type": "int",
+    "Description": "Returns the number of characters in a string"
+  },
+  {
+    "Method": "Lower(string)",
+    "Return Type": "string",
+    "Description": "Converts all uppercase letters in a text string to lowercase."
+  },
+  {
+    "Method": "Mid(string, int nFirst, int nCount)",
+    "Return Type": "string",
+    "Description": "Returns a substring of length nCount characters from a string, starting at position nFirst\n        (zero-based)."
+  },
+  {
+    "Method": "Substitute(string text, string oldText, string newText)",
+    "Return Type": "string",
+    "Description": "Substitutes newText for oldText in a text string."
+  },
+  {
+    "Method": "Trim(string)",
+    "Return Type": "string",
+    "Description": "Removes all occurrences of white space characters from the beginning and end of a string.\n      "
+  },
+  {
+    "Method": "Upper(string)",
+    "Return Type": "string",
+    "Description": "Converts all lowercase letters in a text string to uppercase."
+  }
+]

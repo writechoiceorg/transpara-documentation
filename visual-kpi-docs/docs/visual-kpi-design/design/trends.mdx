@@ -1,0 +1,81 @@
+---
+id: trends
+title: Trends
+slug: trends
+description: Shows the steps the designer must follows to create a trend.
+
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+While it's true that a Trend is really a line chart, trends are one of the most powerful features of Visual KPI because they are so highly configurable. KPIs automatically have trends, users can create trends on the fly (Ad-hoc trends), or you can configure managed trends in Visual KPI Designer.
+
+While KPI trends are configured around a single actual value plus targets and limits, a managed trend is a separate type of object that can contain up to 20 pens (from one or many data sources). Like any other object in Visual KPI, managed trends can have attributes, be members of groups, are customizable, and more.
+
+<StylizedImage
+  imgURL="img/designer/kpis-spc.png"
+  alt="KPI Trend End User"
+/>
+
+## Configure Managed Trends Attributes
+
+After you have created and configured some basic attributes for a trend, such as the name, description, display order and group to which it belongs, you can begin to configure managed trends by defining data to be trended. Here, we show you the basic attributes that you need to set to configure managed trends. To see all of the possible attributes you can configure, see Charts Attributes & Keywords Reference Guide.
+
+Visual KPI uses Pens to define each data set in a trend. You'll define attributes for each pen you create. You can have up to 20 pens in a trend, meaning you can trend 20 data sets in one chart.
+
+### Define Pen Value and/or Interface
+
+Define a value, calculation and/or interface for each pen. When you pair an interface with a value, you get a dynamic value.
+
+### Name and Color Pens
+
+The name and color of pens help you identify the data on display. Together, the name and color attributes build the legend that appears below the trend.
+
+Defining a color is optional. If you leave the colors blank, Visual KPI will generate a different color for each pen. You can also use a HEX color value in the Pen Color field.
+
+If you want to change the default colors that you can choose from, you can define your own colors in Site Settings.
+
+### Configure Trend Type
+
+When you configure managed trends, you can change the default Trend Type by using the pulldown menu. Interpolated is the default.
+
+Interpolated draws a line from one value to the next. Good for flowing data like temperature changes.
+
+A Step trend draws a line from one data set to the next data set. A Step trend is good for showing slower moving data, such as average leave time per employee, measured in days, and not updated often. Another good example for a Step trend would be to show a trend of how many employees clocked in today. It's a flat value. But if you trended that value for two years, you may want to see an Interpolated trend.
+
+Another good example of when to use a Step trend would be when you want to display whether a machine is ON or OFF. The trend steps between on or off; there is no data in between.
+
+The Symbol Trend Type drops a point where the data actually exists along the trend line.
+
+<StylizedImage
+  imgURL="img/designer/trends-worksheet.png"
+  alt="Trends Worksheet"
+/>
+
+### Set Trend Scale
+
+You can select a Single-Scale or Multi-Scale trend as you configure managed trends. A Single-Scale trend has a single Y axis, and a single X axis, whereas a Multi-Scale trend can have as many Y axes as you have pens. (The X axis is based on time and remains the same in both Single-Scale and Multi-Scale.)
+
+A Multi-Scale trend is good for displaying very different values, such as the price of oil compared to oil production. A Multi-Scale trend shows how values with different scales correlate.
+
+Each Y axis is displayed in the legend that appears beneath the trend, and the scale changes as you click an item in the legend.
+
+### Set Trend Y Axis
+
+Select how you want to display the range of data in the managed trend.
+
+Auto-Scale, which is the default, displays the Y axis based on the data that's in the trend. The Y axis will change ranges to show the minimum and maximum ranges.
+
+The Pen Min and Max Y Axis attribute uses the individual settings that you define for each pen.
+
+Trend Min and Max Y Axis sets the Y axis for the entire trend based on the Min and Max Y axes that you set in Visual KPI Designer. It's a fixed Y axis (vertical range) for the entire trend.
+
+So, if you use either of the attributes other than Auto-Scale, you need to also define the pen and trend min and max for the Y axis.
+
+<StylizedImage
+  imgURL="img/designer/trends-worksheet2.png"
+  alt="Trends Worksheet 2"
+/>

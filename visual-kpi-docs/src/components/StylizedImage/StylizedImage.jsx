@@ -8,7 +8,7 @@ export default function StylizedImage({ imgURL, wSize, alt }) {
         src={useBaseUrl(imgURL)}
         alt={alt}
         style={{
-          width: wSize,
+          maxWidth: wSize,
           margin: '0 0 var(--ifm-paragraph-margin-bottom)',
           borderRadius: '7px', 
           boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.2)', 

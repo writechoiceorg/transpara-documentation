@@ -1,0 +1,65 @@
+---
+id: contacts-alerts
+title: Contacts & Alerts
+slug: contacts-alerts
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import PngFont from '@site/src/components/PngFont/PngFont';
+
+Visual KPI Designer enables you to configure contacts that can be referenced in your KPI data. This feature gives end-users quick access to the person responsible for a specific data set. Once you've created and saved a contact, it becomes available in the Contact pull-down lists within the Groups, KPIs, Charts, and Tables worksheets in Visual KPI Designer. 
+
+While contacts provide a way for end-users to report problems or request help, Alert Templates automatically send out notifications to chosen contacts. In Visual KPI Designer, you can define the types of alerts to be sent using Alert Templates. You can decide what information the alert email should include and the time intervals to send the alerts.
+
+### Configure Contacts
+
+To add and configure new contacts, follow the steps:
+
+1. Click on the Site Settings icon (<PngFont name='options28' />).
+2. Select **Contacts & Alerts**.
+3. Then, select **Contacts**.
+
+<StylizedImage
+  imgURL="img/site-settings/contacts-worksheet.png"
+  alt="Visual Designer Contacts Worksheet"
+/>
+
+On the **Contacts** worksheet, you find all existing contacts. To add a new contact to the list, follow the steps:
+
+1. Add a **Name** on the first blank row below the column headers.
+2. Add a **Description** if appropriate.
+3. Enter one or multiple **Contact Names**, **Contact Emails** and **Contact Phones**. If you want to enter multiple names, emails or phones, just separate them with semicolons. 
+4. Place an **x** in the first column for the new contact. 
+5. Click the **Save** button (<PngFont name='save28' />) to write the changes to the database.
+
+:::info Saving Data
+
+To save your changes, place an **x** in the first column for each object you want to save. All Contacts marked with an **x** will be saved to the Visual KPI Server by clicking the **Save** button (<PngFont name='save28' />).
+
+:::
+
+After adding a contact you can edit it by overwriting the values in the cells, placing an **x** in the first column for the contact you want to edit, and then clicking the **Save** button (<PngFont name='save28' />). 
+
+To remove the contact place an **x** first column for each contact you want to delete. Then click the Delete Selected Contacts button (<PngFont name='clear28a' />). 
+
+:::caution Deleting Contacts
+  Be careful when deleting contacts. All Contacts marked with an **x** will be deleted from the Visual KPI Server. Before deleting your contact data, it's recommended that you save a copy of the **VisualKPIDesigner.xlsx** file. If you change your mind later and wish to retrieve this data, you can open a copy of the **VisualKPIDesigner.xlsx** file and re-save it.
+:::
+
+### Configure Alerts
+
+When working with KPIs, you can select the name of an alert template in a pull-down, appling all of the alert attributes assigned to that template. You can create as many Alert Templates as you want. Open the Alert Templates worksheet by clicking the sitewide Settings configuration icon (add icon) and select **Contacts & Alerts** and then **Alert Templates**.
+
+<StylizedImage
+  imgURL="img/site-settings/alerttemplate-worksheet.png"
+  alt="Alert Template Worksheet"
+/>
+
+Click **New Alert Template** (add icon) for a new row with the default alert settings, but you can change the values in any cell.  Click any of the header cells in the worksheet to get more information about each alert attribute. Click the **Membership of Selected Alert Templates** icon (add icon) to show each KPI that has an alert assigned, along with the name of the Alert Template assigned to it.
+
+<StylizedImage
+  imgURL="img/site-settings/alertmembership-worksheet.png"
+  alt="Alert Membership Worksheet"
+/>

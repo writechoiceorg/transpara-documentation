@@ -290,7 +290,7 @@
   {
     "AF Attribute Name": "URL Descriptor, URLDescriptor, URL Description, URLDescription, URL Name, URLName",
     "Data Type": "String",
-    "Valid Values": "Any\n* URL and URL Descriptor can be semi-colon (;) delimited lists. It is best if you match these up (i.e. 3 urls and 3 descriptors)",
+    "Valid Values": "Any\n* URL and URL Descriptor can be semi-colon (;) delimited lists. it's best if you match these up (i.e. 3 urls and 3 descriptors)",
     "Visual KPI Designer Value": ""
   },
   {

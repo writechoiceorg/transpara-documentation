@@ -1,0 +1,34 @@
+[
+  {
+    "Operator": "&",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Bitwise AND operator."
+  },
+  {
+    "Operator": "|",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Bitwise OR operator."
+  },
+  {
+    "Operator": "!&",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Bitwise exclusive-OR operator."
+  },
+  {
+    "Operator": "~",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Bitwise complement operator."
+  }
+]

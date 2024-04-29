@@ -10,8 +10,8 @@ const Card = ({ logo, name, linkTo }) => {
   );
 };
 
-const LinkCards = ({ data }) => {
-  return <CardList data={data} Card={Card} className={"link_cards_container"} />;
+const LinkCards = ({ data, numColumns  }) => {
+  return <CardList data={data} numColumns={numColumns} Card={Card} className={"link_cards_container"} />;
 };
 
 export default LinkCards;

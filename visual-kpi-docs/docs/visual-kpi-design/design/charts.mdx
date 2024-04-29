@@ -1,0 +1,87 @@
+---
+id: charts
+title: Charts
+slug: charts
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+Visual KPI Charts display data in relation to defined limits and targets. Color in charts indicates status, and other marks, such as lines, show targets and limits. When you create and configure Charts in Visual KPI Designer, the new chart data is uploaded immediately to the Visual KPI database and appears live on your site.
+
+Charts can be used to show plant downtime, metrics based on yield or profit, equipment performance over time, or almost anything. If you can chart it, you can visualize it in Visual KPI.
+
+- Bar Charts
+- Embedded Content
+- Gantt Charts
+- Pareto Charts
+- Pie Charts
+- Managed Trends
+- XY Plots
+
+## Creating Charts in Visual KPI
+
+Just like KPIs, charts can live in any group and can be added to groups dynamically based defined attributes and by building queries.
+
+Visual KPI Charts are not static visualizations. You can change the data displayed in a chart on your Visual KPI site based on time. For as much data is available, you can go back in time and forward, visualize one day of data, or 30. Learn more about Navigating Charts.
+
+You can define attributes for new Charts in Visual KPI Designer by entering data directly into the cells in the Chart worksheet or by copying and pasting an existing Chart row into a new Chart row.
+
+Using Visual KPI Designer, you can also return data for you Charts via connected interfaces. You can add functions and formulas, including relative time functions, that allow you to capture and display data in almost any way you can imagine.
+
+Learn more about the types of information and data limits of each field and all chart attributes.
+
+<StylizedImage
+  imgURL="img/designer/charts-worksheet.png"
+  alt="Charts Worksheet"
+/>
+
+## Create a New Chart
+
+To create a new chart, follow the steps below:
+
+1. Click the Charts tab and use the pulldown menu to select the type of chart you want to create.
+2. Click the New Chart icon ( add icon ).
+3. Enter a name for the Chart.
+4. Add the new Chart using one of the following options:
+    - Click **Apply** to add the new Chart and its default settings to the Charts worksheet and continue adding Charts.
+    - Click **OK** to add the new Chart and its default settings to the Charts worksheet and close the dialogue.
+    - Click **Cancel** to cancel the creation of the new Chart. Once you have clicked the Apply button, the Chart(s) already added to the Charts worksheet will not be removed.
+
+:::note Working with Charts
+
+If you have a worksheet with Charts open and want to remove all Charts from the current Chart worksheet, select the Replace worksheet contents checkbox (any unsaved changes are lost). This will also remove the existing Charts from your site.
+
+:::
+
+## Define Chart Attributes
+
+Use the attribute fields (columns) to define your Charts. We've included on this page some basic attributes that apply to all charts. To learn more about attributes for each type of chart, select one of the Chart Types above.
+
+See a full list of all possible Chart attributes in the Charts Attributes & Keyword Reference.
+
+### Define Display Order & Description
+
+In the Charts worksheet, enter the chart Display Order. This is the order in which the chart will be listed on the Charts screen on your Visual KPI site.
+
+The Description appears below the name of the chart.
+
+Note: KPIs with an assigned Display Order are listed at the top of the page in Display Order. KPIs that don't have an assigned Display Order are displayed in alphabetical order, following the KPIs with a Display Order.
+
+### Assign the Chart to a Group
+
+If the Chart should only be included in a single Group, select the Group Name from the pulldown menu of Groups already defined. If you prefer that Group assignments should be determined at run-time, it's best to build a query to create a Dynamic Group. The **Home group** is the Home page for Visual KPI.
+
+### Save Chart Attributes
+
+To save a Chart, place an **x** in the first column and click the Save icon ( add icon ) in the open Chart tab of the Objects Toolbar. it's important to note that ALL Charts with an **x** in the (x) column will be saved. You can remove the **x** for any Chart you don't want to save or update.
+
+:::note Save your information
+
+Don't forget to place an **x** in the first column to save your new Chart attribute settings.
+
+:::

@@ -1,0 +1,55 @@
+---
+id: kpis
+title: KPIs
+slug: kpis
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+When you create and configure KPIs in Visual KPI Designer, the new KPI data is uploaded immediately to the KPI database and appears live on your site. You can define attributes for new KPIs by entering data directly into the cells in the KPI worksheet or by copying and pasting an existing KPI row into a new KPI row. You can also return data for you KPIs via connected interfaces and add functions and formulas, including relative time functions, that allow you to capture and display data in almost any way you can imagine. 
+
+<StylizedImage
+  imgURL="img/working-kpis/kpis-worksheet.png"
+  alt="KPIs Worksheet"
+/>
+
+## Create a new KPI
+
+To create a new KPI, select the KPIs tab and click the New KPI icon ( add icon ) and enter a name for the KPI. Then, you can click **Apply** to add the new KPI and its default settings to the KPIs worksheet and continue adding KPIs, **OK** to add the new KPI and its default settings to the KPIs worksheet and close the dialogue or **Cancel** to cancel the creation of the new KPI. Once you have clicked the Apply button, the KPI(s) already added to the KPIs worksheet will not be removed.
+
+:::note 
+
+If you have a worksheet with KPIs open and want to remove all KPIs from the current KPI worksheet, select the **Replace worksheet** contents checkbox (any unsaved changes are lost). This will also remove the existing KPIs from your site.
+
+:::
+
+## Define KPI attributes
+
+Use the attribute fields (columns) on the KPI Worksheet to define your KPI. To save, place an **x** in the first column and click the Save icon ( add icon ) in the open KPI tab of the Objects Toolbar. it's important to note that ALL KPIs with an “x” in the (x) column will be saved. You can remove the **x** for any KPI you don't want to save or update. See a full list of all possible KPI attributes in the [KPI Attributes & Keyword Reference](/).
+
+### Basic attributes
+
+There are many attributes that you can explore, you can learn about them all in our [KPIs Attributes & Keywords Reference](/) page. Some of the basic attributes are presented below.
+
+#### KPI visualization on the Visual KPI Site
+
+Define the order in which the KPI will be listed on the KPIs screen on your Visual KPI site with the **Display Order** attribute. Also, using the **Description** column, you can define what will display on the KPI page on your Visual KPI site. It can be a description of the KPI, a URL to any Web page, a tag name used to retrieve data from an external system, or an attribute formula or function.
+
+If you want a KPI to be displayed on the Visual KPI site, select TRUE from the **Show** column list, otherwise, select FALSE. However, if you want Visual KPI to determine at run-time if the KPI should be displayed, use a tag name or an attribute calculation instead of True/False. If you use a tag name for the Show attribute, you must specify the interface in the Show Interface column. Any non-zero value for Show indicates the KPI will be displayed on your Visual KPI site.
+
+To add a KPI to a single Group, select the Group Name from the list of Groups already defined. If you prefer that KPIs in Groups should be determined at run-time, it's best to build a query to create a Dynamic Group. The **Home** group is the Home page for Visual KPI.
+
+:::tip Value from External System
+
+To retrieve the value from an external system, specify a tag name in the **Actual** column, and specify the interface name in the **Actual Interface** column. 
+
+:::
+
+## What is next?
+
+Learn more about adding [Attributes Formulas & Functions](/) to KPIs.

@@ -1,0 +1,146 @@
+[
+  {
+    "Method": "NOW()",
+    "Return Type": "DateTime",
+    "Description": "Current date and time according to the setting of your computer\u00e2\u20ac\u2122s system date and time.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "TODAY()",
+    "Return Type": "DateTime",
+    "Description": "Current date. Time part of the day is zero (midnight).",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "YEAR(date)",
+    "Return Type": "int",
+    "Description": "Number representing the year.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "MONTH(date)",
+    "Return Type": "int",
+    "Description": "Number between 1 and 12, inclusive, representing the month of the year.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "DAY(date)",
+    "Return Type": "int",
+    "Description": "Number between 1 and 31, inclusive, representing the day of the month.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "WEEKDAY(date)",
+    "Return Type": "DayOfWeek enumeration",
+    "Description": "Number representing the day of the week.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "HOUR(date)",
+    "Return Type": "int",
+    "Description": "Number between 0 and 23, inclusive, representing the hour of the day.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "MINUTE(date)",
+    "Return Type": "int",
+    "Description": "Number between 0 and 59, inclusive, representing the minute of the hour.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "SECOND(date)",
+    "Return Type": "int",
+    "Description": "Number between 0 and 59, inclusive, representing the second of the minute.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "DATEADD(interval, double number, DateTime date)",
+    "Return Type": "DateTime",
+    "Description": "Number between 0 and 59, inclusive, representing the minute of the hour.",
+    "Parameters": "interval: DateInterval enumeration value or string expression representing the time interval you want to add. The intervalargument can have one of the settings listed here.<br> number: The number of intervals you want to add. It can be positive (to get dates in the future) or negative (to get dates in the past). Any fractional part of number is ignored.<br> date: date to which the interval is added.",
+    "Remarks": "",
+    "Example": "The following expressions are equivalent:<br> DateAdd(dtMonth, 1, #2005-12-31#) DateAdd(“m”, 1, #2005-12-31#) DateAdd(2, 1, #2005-12-31#)In this example, DateAdd returns #2006-01-31#.",
+    "Return Value": ""
+  },
+  {
+    "Method": "DATEDIFF(interval, DateTime date1, DateTime date2 [, firstdayofweek\n          [,firstweekofyear]])",
+    "Return Type": "System.Int64",
+    "Description": "Returns the number of intervals between two dates.",
+    "Parameters": "interval: DateInterval enumeration value or string expression representing the time interval\n        you want to use as the unit of difference between date1 and date2. The interval argument can have one of the\n        settings listed here. date1, date2: Date expressions. Two dates you want to use in the calculation.\n        firstdayofweek: Optional. A value chosen from the FirstDayOfWeek enumeration that specifies the day of the week.\n        If not specified, Sunday is assumed. firstweekofyear: Optional. A value chosen from the FirstWeekOfYear\n        enumeration that specifies the first week of the year. If not specified, the first week is assumed to be the\n        week in which January 1 occurs.",
+    "Remarks": "If Date1 represents a later date and time than Date2, DATEDIFF returns a negative number.<br> If Interval is set to DateInterval.Year, DateInterval.Quarter, or DateInterval.Month the return value is the number of date and time boundaries crossed between Date1 and Date2.<br> Note When comparing December 31 to January 1 of the following year, DATEDIFF returns 1 for DateInterval.Year, DateInterval.Quarter, or DateInterval.Month, even though only one day has elapsed.",
+    "Example": "The following expressions are equivalent:<br> DateDiff(dtYear, #2005-12-31#, #1995-12-31#) DateDiff(“yyyy”, #2005-12-31#, #1995-12-31#) DateDiff(0, #2005-12-31#, #1995-12-31#)In this example, DateDiff returns -10.",
+    "Return Value": ""
+  },
+  {
+    "Method": "DATEPART(interval, DateTime date [, firstdayofweek [,firstweekofyear]])",
+    "Return Type": "System.Int32",
+    "Description": "Returns an Integer value containing the specified component of a given Date value.",
+    "Parameters": "interval: DateInterval enumeration value or string expression representing the part of the\n        date/time value you want to return. The interval argument can have one of the settings listed here. date:\n        Date expression you want to evaluate. firstdayofweek: Optional. A value chosen from the FirstDayOfWeek\n        enumeration that specifies the day of the week. If not specified, Sunday is assumed. firstweekofyear:\n        Optional. A value chosen from the FirstWeekOfYear enumeration that specifies the first week of the year. If not\n        specified, the first week is assumed to be the week in which January 1 occurs.",
+    "Remarks": "",
+    "Example": "The following expressions are equivalent:<br> DatePart(dtQuarter, #2005-12-31#) DatePart(“q”, #2005-12-31#) DatePart(1, #2005-12-31#)In this example, DatePart returns 4.",
+    "Return Value": ""
+  },
+  {
+    "Method": "DATE(int year, int month, int day [, int hour, int minute, int second])",
+    "Return Type": "DateTime",
+    "Description": "A Date value representing a specified year, month, day, hour, minute, and second.",
+    "Parameters": "year: The year (1 through 9999). month: The month (1 through 12). day: The day (1\n        through the number of days in month). hour: Optional. The hours (0 through 23). minute: Optional. The\n        minutes (0 through 59). second: Optional. The seconds (0 through 59).",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": "A Date value representing a specified year, month, day, hour, minute, and second."
+  },
+  {
+    "Method": "MIN(DateTime date1, DateTime date2, \u00e2\u20ac\u00a6) MIN(DateTime[ ] date)",
+    "Return Type": "DateTime",
+    "Description": "Returns the smallest date in a set of date values.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "MAX(DateTime date1, DateTime date2, \u00e2\u20ac\u00a6) MAX(DateTime[ ] date)",
+    "Return Type": "DateTime",
+    "Description": "Returns the largest date in a set of date values.",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  },
+  {
+    "Method": "FORMAT(DateTime, string style)",
+    "Return Type": "string",
+    "Description": "Returns a string expression formatted according to instructions contained in a format string\n        expression. For information on how to create the style argument, see the appropriate topic at MSDN:\n        Predefined Date Formats User-Defined Date Formats",
+    "Parameters": "",
+    "Remarks": "",
+    "Example": "",
+    "Return Value": ""
+  }
+]

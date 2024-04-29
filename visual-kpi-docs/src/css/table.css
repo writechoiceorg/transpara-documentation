@@ -27,6 +27,7 @@
   font-style: normal;
   font-weight: 700;
   margin: 0 3px;
+  min-width: 50px;
 }
 
 .filters_container #rowsToShow:hover {
@@ -101,21 +102,26 @@
   cursor: pointer;
 }
 
+.table_container {
+  overflow-y: auto;
+  max-height: 600px;
+  position: relative;
+}
+
 table {
   width: 100% !important;
   margin-bottom: var(--ifm-spacing-vertical);
-  border-radius: 7px 7px 0 0;
-  table-layout: fixed;
+  border-radius: 7px !important;
+  display: table;
 }
 
-table thead, table tbody {
-  width: auto !important;
-  border: 1px solid #ddd7e9;
-  padding: 0 auto;
+table thead,
+table tbody {
+  width: 100% !important;
 }
 
 table thead th {
-  border: none;
+  border: 1px solid #690;
   text-align: left;
   background: #690 !important;
   color: #fff;
@@ -125,17 +131,14 @@ table thead th {
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
-  width: 50%;
-}
-
-table tr {
-  width: 100%;
-  align-items: flex-start;
+  /* width: 50%; */
+  position: sticky;
+  top: 0;
+  /* z-index: 1; */
 }
 
 table tr td {
   background-color: #ffffff;
-  border: 1px solid #e7eaee;
   color: #8e8e8e;
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Raleway;

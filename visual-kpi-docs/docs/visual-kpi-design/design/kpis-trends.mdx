@@ -1,0 +1,56 @@
+---
+id: kpis-trends
+title: KPI Trends
+slug: kpis-trends
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+Any KPI can be viewed as a trend. Use Visual KPI Designer to set the KPI trend default attributes.
+
+We say “default” attributes because trends can be customized by users on Visual KPI sites. For example, the Start and End times you set in Visual KPI Designer show as the default setting on your Visual KPI site. Users can select other time ranges to customize trends only in their view of the Visual KPI site.
+
+<StylizedImage
+  imgURL="img/designer/kpi-trends-enduser.png"
+  alt="KPI Trend End User"
+/>
+
+## Set Trend Start/End Times & Interface
+
+If you want to specify the Start and End times for this KPI's Trends, enter the Start time in the Trend Start Time column and the End time in the Trend End Time column. If these values are left blank, the Trend graphs will use the Default Trend Range defined in the Default Ranges.
+
+You can also use an interface with the start and end times. The start and end times will return data for the selected interface only for the start and end times selected.
+
+## Select Trend Type
+
+Select the type of trend to be used as the line type for each of the pens on the KPI trend: Actual, Target and Limit. You can select from Interpolated, Step, Symbol, Interpolated + Symbol, or Step + Symbol. If you leave this blank, the trend type will default to Interpolated.
+
+From the Trend Scale drop-down list, select the type of trend to be used for the KPI. You can select either Single Scale or Multi-Scale. In Single Scale mode, only the Target line indicator will be displayed. In Multi-Scale mode, all status indicator lines will appear in the trend.
+
+## Set Minimum and Maximum Values
+
+In the Trend Y Axis, select TRUE if you want the Min and Max values to be ignored; the Y Axis will scale based on the values in the trend. Select FALSE to enforce the use of the Min and Max values for the Y Axis scaling.
+
+## Override Default Trend Lines Display
+
+You can set a default behavior for showing (or not) the Target, Limits, and Average indicator lines within the trend. If you select Default for an individual KPI, the trend will display whatever you selected in sitewide settings as default behavior for the entire site. If you want to override the default behavior for a KPI, select TRUE or FALSE from the drop-down menu. Whatever you choose as default, users on your KPI site will still have the option to show or hide trend lines.
+
+## Show Status Background
+
+We added a feature in Visual KPI sites that “colors” the background of a trend based on status. This allows you to quickly see the trend status over time without having to study the data points and where they fall on the target and limits axis.
+
+In Visual KPI Designer, you can configure the status background to show by default, or not. Either way, users can toggle the status background on and off.
+
+Set the default site behavior for status background in sitewide settings (Features and Config/Website/Show Status Background).
+
+To override the default sitewide setting for an individual KPI, select TRUE or FALSE for Show Status Background.
+
+<StylizedImage
+  imgURL="img/designer/kpi-trends-worksheet.png"
+  alt="KPI Trends Worksheet"
+/>

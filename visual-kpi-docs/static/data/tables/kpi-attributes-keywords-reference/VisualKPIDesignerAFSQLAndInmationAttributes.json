@@ -593,7 +593,7 @@
   },
   {
     "Visual KPI Attribute": "Limit Calc Start Time",
-    "Description": "The Start Time that is used to calculate the limits and mean for the SPC KPI (Note:  Start Time must be <  End Time and the value can be an actual or relative date [e.g., 6/12/2015 or *-7Days]). Pair this with an interface to display a dynamic value.",
+    "Description": "The Start Time that's used to calculate the limits and mean for the SPC KPI (Note:  Start Time must be <  End Time and the value can be an actual or relative date [e.g., 6/12/2015 or *-7Days]). Pair this with an interface to display a dynamic value.",
     "Value": "",
     "AF": "yes",
     "SQL": "yes",
@@ -609,7 +609,7 @@
   },
   {
     "Visual KPI Attribute": "Limit Calc End Time",
-    "Description": "The End Time that is used to calculate the limits and mean for the SPC KPI (Note:  End Time must be > Start Time and the value can be actual or relative date [e.g., 6/12/2015 or *-7Days]). Pair this with an interface to display a dynamic value.",
+    "Description": "The End Time that's used to calculate the limits and mean for the SPC KPI (Note:  End Time must be > Start Time and the value can be actual or relative date [e.g., 6/12/2015 or *-7Days]). Pair this with an interface to display a dynamic value.",
     "Value": "",
     "AF": "yes",
     "SQL": "yes",

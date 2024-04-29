@@ -1,0 +1,151 @@
+---
+id: spc-kpis
+title: SPC KPI Configuration
+slug: spc-kpis
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+SPC rules allow you to view, trend and alert on data to determine how in or out of control it's based on rules. For example, you have lab samples that need to be charted so you can see when something needs attention because it violates the acceptable control limit(s).
+
+Visual KPI allows you to display SPC charts based quickly and easily using the four most popular Western Electric rules without having to invest in complicated SPC software. While Visual KPI doesn't cover every possible function of SPC, it does allow you to set up your KPIs using SPC rules in just minutes, and you don't need extensive training or knowledge to apply the four most commonly used SPC rules to your KPIs.
+
+:::note Using SPC Rules
+
+Click the label of any of the four rules in Visual KPI Designer to open the link above to see the Western Electric rules, learn more about SPC, and see a description of each of the four most common rules.
+
+:::
+
+## What is SPC?
+
+[Statistical Process Control (SPC)](https://en.wikipedia.org/wiki/Statistical_process_control) is a method for monitoring, controlling and improving processes based on statistical analysis. it's a measure of whether processes are within control limits.
+
+You can use SPC rules to measure quality and productivity. Data is plotted on control charts over a time range using standard deviations and other statistics so you can quickly visualize and analyze the data and quickly see when a process is out of control and needs attention.
+
+SPC contains a very useful set of rules you can use to define control limits in cases where values in time don't correlate. An example would be data collected from lab samples or tracking blood sugar results in diabetes patients.
+
+By charting the data over time, and using statistical decision rules, you can determine whether your process or data is stable, or if it has variations that denote instability. You can see where improvements need to be made or take action in real time with processes that are outside of control limits.
+
+When you apply SPC rules, a KPI may be charted with a Center Line (control value or xBar) or at 1, 2 or 3 standard deviations.
+
+<StylizedImage
+  imgURL="img/designer/kpis-spc.png"
+  alt="KPI SPC Example"
+/>
+
+{/* add video: https://www.youtube.com/watch?v=6ZKCMS2j1sk&t=2s */}
+
+## How do SPC rules work in Visual KPI?
+
+In Visual KPI, SPC is a type of trend, but its limits are set according to SPC rules. You have the option to use Western Electric rules and to enter data manually or use an interface to collect data and calculate and chart a KPI based on these rules. In Visual KPI Designer you can configure KPIs using the four most common [SPC rules](https://en.wikipedia.org/wiki/Statistical_process_control).
+
+When enabled for a KPI, users on your Visual KPI site will visualize the KPI as a line chart (trend) with a center line (control value) and upper and lower limits values that represent violations. In other words, the chart can be used to see data is not within control limits so someone can take action.
+
+To use SPC rules in Visual KPI, all of the limits must be symmetric. Visual KPI does not manage asymmetrical control limits. Visual KPI is not a full SPC implementation system. It's useful to help you implement controls on uncorrelated systems in those rare cases you may need to do so.
+
+:::tip Don't overuse SPC rules
+
+Only enable this on KPIs that require SPC because the calculations add load to the system and will increase your cache time unnecessarily.
+
+:::
+
+## Determining control limits in Visual KPI
+
+Using the Visual KPI Designer, you control how to define SPC KPIs. You can go as simple or as complex as you want.
+
+The Visual KPI Designer offers you three options for how control limits will be determined.
+
+- Let Visual KPI calculate control limits
+- Define start and end time
+- Define control limits
+
+### Define SPC control limits in Visual KPI
+
+SPC is a feature that's bound to a KPI. In other words, you need a KPI first.
+
+You can simply define a KPI with a name and actual value and Visual KPI will do the rest. Normally, a KPI automatically enables a trend view, where you have time on the X-axis and value on the Y-axis. Limits can be defined via dynamic reference to an Interface, via a static value or to nothing, where there is no limit.
+
+To define control limits for a KPI using SPC rules, open Visual KPI Designer and find the SPC section of the KPI configuration worksheet. Here you can define SPC rules for any KPI.
+
+First, set TRUE or FALSE for Is SPC.
+
+This tells Visual KPI whether this KPI will be displayed based on SPC rules or not. If yes, you'll set Is SPC to TRUE. When the actual value you set for a KPI is used as an SPC, it will be treated according to the rules you define.
+
+:::note SPC KPIs Configuration
+
+If you want, SPC KPIs can have both standard KPI limits and a target, in addition to the automatically calculated SPC limits. Users have the ability to toggle each of these on or off when viewing the trend.
+
+:::
+
+### Define a sample size
+
+The sample size is the only setting that's required for defining control limits via SPC in Visual KPI.
+
+The number you add to the Sample Count column represents the number of data points or samples you want to include to make the determination of status (whether or not the group of uncorrelated samples is in control, or not).
+
+By default, the Status Calc Sample Count is set to 9, because for SPC rule 4 (WE4) by definition you need at least 9 samples. The larger your sample size, the slower the calculation will return a status; but a larger sample size also means a more reliable status.
+
+Next, decide which option is best for determining control limits for your KPI.
+
+<StylizedImage
+  imgURL="img/designer/spc-selection.png"
+  alt="KPI SPC Designer"
+/>
+
+### Let Visual KPI calculate control limits
+
+To let Visual KPI calculate limits for you, leave Start and End time blank and leave the LCL, Centre Line and UCL blank. Visual KPI will use the screen time range on the displayed chart to calculate control limits.
+
+For example, if a user opens a one-week trend in the Visual KPI site, we'll use one week of data to calculate the lower and upper limits and the center line.
+
+### Define start and end time
+
+To define control limits based on a time range, enter Start and End times. Ideally, when setting Start and End times, you want to use a time range when the process was in good control. This time range will be used as a basis for control limits.
+
+Start and End times in SPC work similar to a normal KPI Start and End time. You have two options:
+
+- Add a fixed date and time.
+
+<StylizedImage
+  imgURL="img/designer/spc-fixedtime.png"
+  alt="KPI SPC Fixed Time"
+/>
+
+- Add a dynamic time using an Interface.
+
+<StylizedImage
+  imgURL="img/designer/spc-dynamictime.png"
+  alt="KPI SPC Dynamic Time"
+/>
+
+### Define control limits
+
+You can set control limits manually or return a control limit based on an Interface that returns values that are calculated outside of Visual KPI.
+
+After you've entered a Sample Count, define an SPC variable for a KPI.
+
+Select one or more rules to apply. For each of the four available rules, you can choose to ignore it or select which limit or status the rule will correspond to when the rule is violated.
+
+Select a limit as the state to display, or choose a custom status. (Link to defining custom status)
+
+The columns in Visual KPI Designer you use to set limits are:
+
+- LCL: Lower control limit
+- Centre line (this is the control value that determines when data is not in violation)
+- UCL: Upper control limit
+
+To manually enter control limits, you can enter known values into the LCL, Centre Line and UCL columns for each KPI.
+
+To use an Interface to return values calculated in another system, select an Interface and enter the reference. The LCL, Centre Line and UCL will be populated automatically on your Visual KPI site based on the calculation returned by the Interface.
+
+:::unique Need help?
+
+If you need help setting up SPC rules for Visual KPI, [contact us](https://www.transpara.com/contact-us/).
+
+:::
+

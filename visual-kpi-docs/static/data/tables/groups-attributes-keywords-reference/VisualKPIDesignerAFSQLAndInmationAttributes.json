@@ -33,7 +33,7 @@
   },
   {
     "Visual KPI Attribute": "Group Selection Query",
-    "Description": "Determines what child Groups will appear in this Group based on their attributes (e.g., all Groups where 'Region' =  'Region NE'). For Groups with only 1 parent, it is best to use the Parent Name field on the child Groups.",
+    "Description": "Determines what child Groups will appear in this Group based on their attributes (e.g., all Groups where 'Region' =  'Region NE'). For Groups with only 1 parent, it's best to use the Parent Name field on the child Groups.",
     "Value": "",
     "AF": "no",
     "SQL": "yes",
@@ -41,7 +41,7 @@
   },
   {
     "Visual KPI Attribute": "KPI Selection Query",
-    "Description": "Determines what KPIs will appear in this Group based on their attributes (e.g., all KPIs where 'Region' =  'Region NE'). For KPIs with only 1 parent, it is best to use the Group Name field on the KPIs.",
+    "Description": "Determines what KPIs will appear in this Group based on their attributes (e.g., all KPIs where 'Region' =  'Region NE'). For KPIs with only 1 parent, it's best to use the Group Name field on the KPIs.",
     "Value": "",
     "AF": "no",
     "SQL": "yes",
@@ -49,7 +49,7 @@
   },
   {
     "Visual KPI Attribute": "Chart Selection Query",
-    "Description": "Determines what Charts (Trends, Pareto Charts, XY Plots, etc.) will appear in this Group based on their attributes (e.g., all Charts where 'Region' =  'Region NE'). For Charts with only 1 parent, it is best to use the Group Name field on the Charts.",
+    "Description": "Determines what Charts (Trends, Pareto Charts, XY Plots, etc.) will appear in this Group based on their attributes (e.g., all Charts where 'Region' =  'Region NE'). For Charts with only 1 parent, it's best to use the Group Name field on the Charts.",
     "Value": "",
     "AF": "no",
     "SQL": "yes",
@@ -57,7 +57,7 @@
   },
   {
     "Visual KPI Attribute": "Table Selection Query",
-    "Description": "Determines what Tables will appear in this Group based on their attributes (e.g., all Tables where 'Region' =  'Region NE'). For Tables with only 1 parent, it is best to use the Group Name field on the Tables.",
+    "Description": "Determines what Tables will appear in this Group based on their attributes (e.g., all Tables where 'Region' =  'Region NE'). For Tables with only 1 parent, it's best to use the Group Name field on the Tables.",
     "Value": "",
     "AF": "no",
     "SQL": "yes",

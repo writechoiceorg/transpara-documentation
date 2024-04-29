@@ -7,6 +7,21 @@ const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      ({
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        searchResultContextMaxLength: 100
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
+      }),
+    ],
+  ],
   plugins: [
     // [
     //   require.resolve('@cmfcmf/docusaurus-search-local'),
@@ -27,7 +42,7 @@ const config = {
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  // For GitHub pages deployment, it's often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
@@ -136,6 +151,11 @@ const config = {
             className: 'docs_btn'
           },
           {
+            type: 'search',
+            position: 'right',
+            className: 'searchbar'
+          },
+          {
             to: 'https://www.transpara.com/contact-us/',
             label: 'Support',
             position: 'right',
@@ -146,11 +166,6 @@ const config = {
           //   label: 'Learn more',
           //   position: 'right',
           //   className: 'navbar_link_buttons'
-          // },
-          // {
-          //   type: 'search',
-          //   position: 'right',
-          //   className: 'searchbar'
           // },
           // {
           //   href: 'https://github.com/orgs/writechoiceorg/',

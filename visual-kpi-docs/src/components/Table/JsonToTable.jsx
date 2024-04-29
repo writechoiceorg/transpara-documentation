@@ -45,9 +45,7 @@ const JsonToTable = ({ jsonData }) => {
   }, [filteredData, sortColumn, sortOrder]);
 
   const generateArray = (length) => {
-    let result = [5, 10, 25, 50, 100];
-  
-    result = result.reduce((acc, curr) => {
+    const result = [5, 10, 25, 50, 100].reduce((acc, curr) => {
       if (curr < length) {
         acc.push(curr);
       }
@@ -64,28 +62,75 @@ const JsonToTable = ({ jsonData }) => {
   const startIndex = (currentPage - 1) * rowsToShow;
   const endIndex = startIndex + rowsToShow;
 
-  // Table rows
-  const rows = sortedData.slice(startIndex, endIndex).map((row, index) => (
-    <tr key={index}>
-      {Object.values(row).map((value, colIndex) => (
-        <td key={colIndex}>{value}</td>
-      ))}
-    </tr>
-  ));
-
   // Table header for sorting
   const headers = Object.keys(jsonData[0]).map((key) => (
-    <th key={key} onClick={() => handleSort(key)} style={{ width: `${100 / Object.keys(jsonData[0]).length}%` }}>
+    <th key={key} onClick={() => handleSort(key)} style={{ width: `${105 / Object.keys(jsonData[0]).length}%` }}>
       {key}
       {sortColumn === key && (
-        <span>{sortOrder === 'asc' ? ' 🠽' : ' 🠿'}</span>
+        <span>{sortOrder === 'asc' ? '▴' : '▾'}</span>
       )}
     </th>
   ));
 
+  const processedData = useMemo(() => {
+    let data = jsonData.filter((row) =>
+      Object.values(row).some((value) =>
+        String(value).toLowerCase().includes(filter.toLowerCase())
+      )
+    );
+
+    if (!data.length) {
+      const naRow = Object.keys(jsonData[0]).reduce((acc, key) => {
+        acc[key] = '-';
+        return acc;
+      }, {});
+      data = [naRow];
+    }
+
+    if (sortColumn) {
+      data.sort((a, b) => {
+        const aValue = a[sortColumn];
+        const bValue = b[sortColumn];
+        return sortOrder === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+      });
+    }
+
+    // Grouping data for rowspan
+    const groupedData = [];
+    data.forEach(row => {
+      const lastGroup = groupedData[groupedData.length - 1];
+      if (lastGroup && lastGroup[0][Object.keys(row)[0]] === row[Object.keys(row)[0]] && lastGroup[0][Object.keys(row)[0]] !== '') {
+        lastGroup.push(row);
+      } else {
+        groupedData.push([row]);
+      }
+    });
+
+    return groupedData;
+  }, [jsonData, filter, sortColumn, sortOrder]);
+
+  // Table rows
+  const rows = processedData.slice(startIndex, endIndex).map((group, groupIndex) => (
+    group.map((row, rowIndex) => (
+      <tr key={groupIndex + "-" + rowIndex}>
+        {Object.keys(row).map((key, colIndex) => {
+          if (colIndex === 0 && rowIndex === 0) {
+            return <td key={colIndex} rowSpan={group.length}>{row[key]}</td>;
+          } else if (colIndex !== 0) {
+            return <td key={colIndex}>{row[key]}</td>;
+          }
+          return null;
+        })}
+      </tr>
+    ))
+  ));
+
   const handleSort = (column) => {
-    if (sortColumn === column) {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    if (sortColumn === column && sortOrder === 'desc') {
+      setSortColumn(null);
+      setSortOrder('');
+    } else if (sortColumn === column) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : sortOrder === 'desc' ? '' : 'asc');
     } else {
       setSortColumn(column);
       setSortOrder('asc');
@@ -141,12 +186,14 @@ const JsonToTable = ({ jsonData }) => {
           </div>
         </div>
       </div>
-      <table>
-        <thead>
-          <tr>{headers}</tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
+      <div className="table_container">
+        <table>
+          <thead>
+            <tr>{headers}</tr>
+          </thead>
+          <tbody>{rows}</tbody>
+        </table>
+      </div>
       <div className="filters_container">
         <span className="filter_label">
           Showing {startIndex + 1} to {Math.min(endIndex, sortedData.length)} of {sortedData.length} entries

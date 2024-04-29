@@ -1,0 +1,90 @@
+---
+id: group-maps
+title: Group Maps
+slug: group-maps
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+The Group Map view in Visual KPI is another powerful visualization that has several distinct benefits:
+
+- When enabled, It gives Groups a live status and color much like a KPI normally has.
+- It shows up to 20 KPIs in each Group in a fixed position (e.g. the temperature can always live in the upper right) so users get used to their location regardless of screen size or device.
+- Groups can be collapsed, either individually or all at once so you only need to open them when they need your attention
+
+<StylizedImage
+  imgURL="img/designer/groups-query-example1.png"
+  alt="Group Map End User"
+/>
+
+In a Group Map, the group status–based on the status of the most recently changed KPI in the group, or the worst performing KPI in the group–is determined by your settings in Visual KPI Designer. The top bar, called the Group Map header, displays group status (color and icon, depending on settings).
+
+Use the Visual KPI Designer or Remote Context Server to configure Group Maps. Here are some of the settings you can (in some cases must) configure (using the Designer as the example):
+
+- [required] determine which KPIs and how many appear in a Group Map, including their Group Map Position
+- Determine the Group Map cell count (how many KPIs will show in each group), as a site-wide setting or on an individual group basis
+- Choose Group Map Header Priority, as a site-wide setting or on an individual group basis
+
+To display and configure Group Maps, you first need to set up Groups (the hierarchy). KPIs can live in groups dynamically or in a static state. Learn more about how to [Create & Configure Groups](/docs/visual-kpi-design/design/groups#create-a-new-group).
+
+## Customize Global Settings for Group Maps
+
+Visual KPI Designer has default site-wide settings for Group Maps. You can leave them alone and just select and position your KPIs, or you can change the global settings.
+
+To access global settings for Group Maps:
+
+1. In Visual KPI Designer, go to the Site **Settings** icon (add icon) in the Document Actions panel.
+2. Select **Features & Config** > **Website** to open the worksheet.
+
+## Select and Position KPIs in Group Maps
+
+Once you configure Group Map settings, you need to choose KPIs and their positions for the Group Map.
+
+By default, Visual KPI shows 10 KPIs in each group for the Group Map view, but unless you give them a position none of them will show up. You could have 100 KPIs in a group, but if you identify a position for five of them, you'll only see five. The other positions will be empty. You can override the KPI cell count on an individual group; more on that later.
+
+1. Open a KPI worksheet from the **KPIs** tab (add icon).
+2. Select the group level that contains the KPIs you want to position in the **Group Map**. (example: Plant 1).
+3. Scroll right on the worksheet to find the **Group Map Position** attribute column. For each KPI you want to be included in the Group Map, set the position you want it to appear (left to right, top to bottom) within the Group Map.
+
+:::note Group Map Visualization
+
+If you don't select and position KPIs, your Group Map will not appear on your Visual KPI site.
+
+:::
+
+<StylizedImage
+  imgURL="img/designer/group-search.png"
+  alt="Group Search"
+/>
+
+{/* review example
+ For instance, if your global KPI cell count is set to 8, you can select and position up to 8 KPIs. You may have 20 KPIs in the Group, but you only made space for 8 (as shown in the image below). You must set the position of those 8 KPIs (starting at 1, from left to right). If you skip one position (say position 2), you'll only see 7 KPIs, and you'll see a blank hole in the number 2 position. In the image below, the default cell count is set to 8, but only 7 KPI are positioned in Group AM2. Position 2 is empty. Group CE Bus has only 5 KPIs positioned, so 3 positions are empty.
+
+In the example image below, you can see in Visual KPI Designer that 13 KPIs belong to the group Plant 1, but only 6 KPIs will appear in the Group Map, because only 6 KPIs have a Group Map Position.
+
+For this example, you may want to set the Group Map Cell Count to 6. However, if you plan to show many groups in the Group Map and most groups have 10 KPIs, keep the setting at 10 so they are consistent. */}
+
+For instance, if a Group Map has 2 KPIs you can set the default cell count to 2, and then select and position two KPIs for each group. Regardless of the order in which the KPIs are listed in the KPI worksheet, you set the positions in the order that works best for your situation.
+
+## Override Default Group Map KPI Cell Count
+
+By default, Visual KPI will display 10 KPIs in a Group Map. You can change the setting globally in Site Settings, but you can also override the global setting for an individual group.
+
+1. Open the Groups worksheet from the Groups tab.
+2. Select the group you want to override.
+3. Find the name of the group in the worksheet, and then scroll across the page to find the override setting for Group Map KPI Cell Count in the attributes column headers.
+
+In the Group Map KPI Cell Count attribute column, change or add a number to indicate the number of KPIs you want to display in the Group Map for the group you've just selected. 
+
+{/* review example 
+In the example in the image below, you could find E. Region, scroll right on the page, and once you find the Group Map KPI Cell Count column, add the number 15 in the cell for E. Region. In your Visual KPI site, the E. Region Group Map would show 15 KPIs.
+
+This means that you could leave your default cell count set to 10 and only override cell counts for specific groups where you want to show more or less than 10 KPIs in the Group Map. */}
+
+
+

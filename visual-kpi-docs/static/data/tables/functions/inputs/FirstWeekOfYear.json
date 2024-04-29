@@ -1,0 +1,18 @@
+[
+  {
+    "Constant": "dtSystem",
+    "Numeric Value": "0"
+  },
+  {
+    "Constant": "dtJan1",
+    "Numeric Value": "1"
+  },
+  {
+    "Constant": "dtFirstFourDays",
+    "Numeric Value": "2"
+  },
+  {
+    "Constant": "dtFirstFullWeek",
+    "Numeric Value": "3"
+  }
+]

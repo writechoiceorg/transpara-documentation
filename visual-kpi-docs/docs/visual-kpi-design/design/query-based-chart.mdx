@@ -1,0 +1,285 @@
+---
+id: query-based-chart
+title: Query Based Chart
+slug: query-based-chart
+description: ''
+tags: ['documentation']
+---
+
+import StylizedImage from '@site/src/components/StylizedImage/StylizedImage';
+import selection from '@site/static/font/selection.json';
+import positions from '@site/static/data/icons/iconsPosition.json';
+import SvgFont from '@site/src/components/SvgFont/SvgFont';
+
+There are two ways to create charts (Bar Charts, Pareto Charts, Pie Charts, for example) in Visual KPI: create charts via an Interface or create query-based charts.
+
+## Create charts via an Interface
+
+Using Visual KPI Designer, you can enter a set of lookup/interface pairs. (These lookups can also come via Remote Context Server). For example:
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-attributes.png"
+  alt="Query Based Chart Attributes Example"
+/>
+
+This creates a chart (bar chart in this example) that shows the values of the resulting data returned for Bar 1 and Bar 2 at a moment in time. This chart can be scrolled back and forward in time but will always show values at the particular point in time selected by the end user on your Visual KPI site. The same method can be used for Bar Charts, Pareto Charts and Pie Charts (or new chart types we might add from time to time). This is a quick way of showing data with very little configuration effort.
+
+## Create query-based charts
+
+Another method for creating charts is to use SQL queries. We refer to these as Query-Based Charts.
+
+You may choose to use query-based charts is for simplicity. If the data needed for a chart already exists in a database, you may spend more time (more work) setting up an interface to extract a time/value pair per bar, and in some cases this method may not perform so well.
+
+Data historians such a OSIsoft's PI System, Aspentech, GE, Aveva/Wonderware, and others lend themselves really well to the lookup/interface pair as there is often no schematic correlation of data points. However, in relational database systems, such as SQL Server or Oracle, these relationships are often explicitly defined in the data itself, which makes it more convenient to use the query-based charts approach.
+
+Also, query-based charts must be used if you want to do any of the following:
+
+### Create Ranged-based charts
+
+Instead of a bar or pie slice representing a value at a single point in time, each bar or slice would represent data over a range of time. This is useful for charts that are meant to show things like outages over a week, production totals per day, or incidents per month. The idea is to write a query (more information on schema below) that aggregates data over a time range (defined at design-time and overridable at run time).
+
+### Create Stacked or Clustered Bar charts
+
+Create a series of values, such as production totals per day per factory, or incidents per month per region. Stacked and Clustered bar charts can either be range-based or time-based, but either case will require a query-based approach.
+
+## An example scenario using query-based charts
+
+Let's take a look at the following sample data. In this example, we are manufacturing widgets. They come in three sizes (small, medium and large) and are made from one of six different materials (straw, sticks, bricks, glass, steel and carbon fiber). We have four factories (Factory A, Factory B, Factory C, and Factory D), and each factory produces a number of widgets each hour of a certain size and material. The hourly output of these factories is recorded in a table (tableWidgetProduction).
+
+This table has the following fields: Timestamp (datetime), Factory (nvarchar), Material (nvarchar), Size (nvarchar) and HourlyCount (int). The results of a simple select * query are shown below (Note: this is just a select top N result as the table itself has much more data).
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-data.png"
+  alt="Query Based Chart Data Example"
+/>
+
+## Query-based charts: types
+Visual KPI Chart queries come in 2 types: basic and series-based. Basic queries can be used in Bar Charts, Pareto Charts and Pie Charts, while series-based queries can only be used in Bar Charts (set to Clustered or Stacked).
+
+## Query-based charts: parameters
+Visual KPI Chart queries can optionally use a TIMESTAMP parameter, STARTDATE and ENDDATE parameters or no parameters at all. These date-based parameter keywords will have dates substituted at runtime to allow for time-based (user selected) charts.
+
+Here's an example query:
+
+{/* [code lang=”sql”]
+select sum(HourlyCount) as Value
+
+from tableWidgetProduction
+
+where Timestamp between {STARTDATE} and {ENDDATE}
+
+and [Timestamp] <= getdate() — prevent future data
+
+group by Material
+
+order by Material[/code]
+
+At Runtime, the {STARTDATE} and {ENDDATE} placeholders will be replaced by valid datetime strings and will result in a query that looks like this:
+
+[code lang=”sql”]
+select sum(HourlyCount) as Value
+
+from tableWidgetProduction
+
+where Timestamp between ‘2019-04-01 01:15:00’ and ‘2019-04-07 15:22:11’
+
+and [Timestamp] <= getdate() — prevent future data
+
+group by Material
+
+order by Material
+[/code] */}
+
+## Basic queries
+
+At its most basic, Visual KPI is looking for a column called Value that should hold the data for each bar (Bar Chart and Pareto Chart) or each slice (Pie Chart).
+
+- Given the query above, the resulting dataset and chart would look like this:
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result1.png"
+  alt="Query Based Chart Result Example 1"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result1-enduser.png"
+  alt="Query Based Chart Result Example 1 Chart"
+/>
+
+In order to give the chart bars names, the query needs to also return a Name field:
+
+    {/* [code lang=”sql”]
+    select sum(HourlyCount) as Value,
+
+    Material as Name
+
+    from tableWidgetProduction
+
+    where Timestamp between {STARTDATE} and {ENDDATE}
+
+    and [Timestamp] <= getdate() — prevent future data
+
+    group by Material
+
+    order by Material
+    [/code] */}
+
+- Here's the result of this query and the corresponding chart:
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result2.png"
+  alt="Query Based Chart Result Example 2"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result2-enduser.png"
+  alt="Query Based Chart Result Example 2 Chart"
+/>
+
+- Finally, you can add some color to this chart by adding a Color field to the query:
+
+    {/* [code lang=”sql”]
+    select sum(HourlyCount) as Value,
+
+    Material as Name,
+
+    case when (Material = ‘Straw’) then ‘#DFE26E’
+
+    when (Material = ‘Sticks’) then ‘#CA6F1E’
+
+    when (Material = ‘Bricks’) then ‘#E74C3C’
+
+    when (Material = ‘Glass’) then ‘#85C1E9’
+
+    when (Material = ‘Steel’) then ‘#BDC3C7’
+
+    else ‘#2C3E50’
+
+    end as Color
+
+    from tableWidgetProduction
+
+    where Timestamp between {STARTDATE} and {ENDDATE}
+
+    and [Timestamp] <= getdate() — prevent future data
+
+    group by Material
+
+    order by Material
+    [/code] */}
+
+- Which results in the following data and chart (as bar, pareto and pie charts):
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result3.png"
+  alt="Query Based Chart Result Example 3"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result3-enduser.png"
+  alt="Query Based Chart Result Example 3 Chart"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result3-enduser-pareto.png"
+  alt="Query Based Chart Result Example 3 Chart Pareto"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-example-result3-enduser-pie.png"
+  alt="Query Based Chart Result Example 3 Chart Pie"
+/>
+
+## Series-based queries
+
+To create a series-based Bar Chart (Clustered or Stacked), you need to return a SeriesName, Name and Value column:
+
+    {/* [code lang=”sql”]
+    select Factory as SeriesName,
+
+    Material as Name,
+
+    sum(HourlyCount) as Value
+
+    from tableWidgetProduction
+
+    where Material is not null
+
+    and Timestamp between {STARTDATE} and {ENDDATE}
+
+    and [Timestamp] <= getdate() — prevent future data
+
+    group by Material, Factory
+    [/code] */}
+
+- This results in the following data and chart (Note: the Bar Chart is set to Stacked in Visual KPI Designer, but the exact same query would work if the Bar Chart were set to Clustered):
+
+<StylizedImage
+  imgURL="img/designer/query-chart-series-example-data1.png"
+  alt="Series Based Chart Data Example 1"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-series- example-chart1.png"
+  alt="Series Based Chart Result Example 1"
+/>
+
+- To control the series colors, simply add a column called SeriesColor to the results as follows:
+
+    {/* [code lang=”sql”]
+    select Factory as SeriesName,
+
+    case
+
+    when Factory = ‘Factory A’ then ‘#ED1556’
+
+    when Factory = ‘Factory B’ then ‘#669900’
+
+    when Factory = ‘Factory C’ then ‘#0066ff’
+
+    when Factory = ‘Factory D’ then ‘#66ff66’
+
+    else null
+
+    end as SeriesColor,
+
+    Material as Name,
+
+    sum(HourlyCount) as Value
+
+    from tableWidgetProduction
+
+    where Material is not null
+
+    and Timestamp between {STARTDATE} and {ENDDATE}
+
+    and [Timestamp] <= getdate() — prevent future data
+
+    group by Material, Factory
+    [/code] */}
+
+- This results in the following data and chart:
+
+<StylizedImage
+  imgURL="img/designer/query-chart-series- example-data2.png"
+  alt="Series Based Chart Data Example 2"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-series- example-chart2.png"
+  alt="Series Based Chart Result Example 2"
+/>
+
+- To change the chart to Clustered, use Visual KPI Designer to set the Query Chart Type to Clustered:
+
+<StylizedImage
+  imgURL="img/designer/query-chart-series- example-data3.png"
+  alt="Series Based Chart Data Example 3"
+/>
+
+<StylizedImage
+  imgURL="img/designer/query-chart-series- example-chart3.png"
+  alt="Series Based Chart Result Example 3"
+/>
+
+With these 2 approaches to chart creation, you can create many interesting visualizations. Please don't hesitate to reach our to support team at support@transpara.com if you have any questions. We would love to help!
