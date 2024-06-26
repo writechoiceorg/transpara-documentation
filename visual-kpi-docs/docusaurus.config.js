@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const {themes} = require('prism-react-renderer');
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
@@ -31,6 +30,35 @@ const config = {
     // ],
     require.resolve('docusaurus-plugin-image-zoom'),
     'docusaurus-plugin-sass',
+    [
+      '@scalar/docusaurus',
+      {
+        // the `id` is required if you have multiple instances of the @scalar/docusaurus plugin
+        id: 'tstore-api',
+        label: 'tStore API',
+        route: '/tstore-api',
+        configuration: {
+          spec: {
+            url: 'http://borg1.transpara.com:10001/api/v1/openapi.json',
+          },
+        },
+      }, 
+    ],
+    // Second API definition
+    [
+      '@scalar/docusaurus',
+      {
+        // the `id` is required if you have multiple instances of the @scalar/docusaurus plugin
+        id: 'tcalc-api',
+        label: 'tCalc API',
+        route: '/tcalc-api',
+        configuration: {
+          spec: {
+            url: 'http://borg1.transpara.com:10003/api/v1/openapi.json',
+          },
+        },
+      }, 
+    ],
   ],
 
   title: 'Visual KPI',

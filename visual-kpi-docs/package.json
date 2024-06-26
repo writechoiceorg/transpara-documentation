@@ -19,6 +19,7 @@
     "@easyops-cn/docusaurus-search-local": "^0.40.1",
     "@mdx-js/react": "^3.0.0",
     "@phosphor-icons/react": "^2.0.13",
+    "@scalar/docusaurus": "^0.4.17",
     "clsx": "^1.2.1",
     "docusaurus-plugin-image-zoom": "^1.0.1",
     "docusaurus-plugin-sass": "^0.2.5",
