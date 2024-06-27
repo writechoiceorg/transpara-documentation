@@ -30,34 +30,64 @@ const config = {
     // ],
     require.resolve('docusaurus-plugin-image-zoom'),
     'docusaurus-plugin-sass',
-    [
-      '@scalar/docusaurus',
-      {
+    // [
+      // '@scalar/docusaurus',
+      // {
         // the `id` is required if you have multiple instances of the @scalar/docusaurus plugin
-        id: 'tstore-api',
-        label: 'tStore API',
-        route: '/tstore-api',
-        configuration: {
-          spec: {
-            url: 'http://borg1.transpara.com:10001/api/v1/openapi.json',
-          },
-        },
-      }, 
-    ],
+        // id: 'tstore',
+        // label: 'tStore API',
+        // route: '/tstore-api',
+        // configuration: {
+          // spec: {
+            // url: "/api/tStore.json"
+          // },
+          // hideModels: true
+        // },
+      // }, 
+    // ],
     // Second API definition
+    // [
+      // '@scalar/docusaurus',
+      // {
+        // the `id` is required if you have multiple instances of the @scalar/docusaurus plugin
+        // id: 'tcalc',
+        // label: 'tCalc API',
+        // route: '/tcalc-api',
+        // configuration: {
+          // spec: {
+            // url: "/api/tCalc.json"
+          // },
+          // hideModels: true,
+        // },
+      // }, 
+    // ],
     [
       '@scalar/docusaurus',
       {
-        // the `id` is required if you have multiple instances of the @scalar/docusaurus plugin
-        id: 'tcalc-api',
-        label: 'tCalc API',
-        route: '/tcalc-api',
+        id:'1',
+        label: 'Petstore',
+        route: '/petstore',
         configuration: {
           spec: {
-            url: 'http://borg1.transpara.com:10003/api/v1/openapi.json',
+            // Put the URL to your OpenAPI document here:
+            url: 'https://petstore.swagger.io/v2/swagger.json',
           },
         },
-      }, 
+      }
+    ],
+    [
+      '@scalar/docusaurus',
+      {
+        id:'2',
+        label: 'Scalar',
+        route: '/scalar',
+        configuration: {
+          spec: {
+            // Put the URL to your OpenAPI document here:
+            url: 'https://cdn.jsdelivr.net/npm/@scalar/galaxy/dist/latest.json',
+          },
+        },
+      }
     ],
   ],
 
