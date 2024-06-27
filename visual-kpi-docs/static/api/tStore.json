@@ -1,0 +1,1156 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Transpara tStore API",
+    "version": "0.129.0"
+  },
+  "servers": [
+    {
+      "url": "http://borg1.transpara.com:10001",
+      "description": "Live server"
+    }
+  ],
+  "paths": {
+    "/metrics": {
+      "get": {
+        "tags": [
+          "monitoring"
+        ],
+        "summary": "Metrics",
+        "description": "Endpoint that serves Prometheus metrics.",
+        "operationId": "metrics_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/system/metrics": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Get List Of Metrics",
+        "operationId": "get_list_of_metrics_api_v1_system_metrics_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Filter",
+              "type": "string",
+              "default": ""
+            },
+            "name": "filter",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/system/metric-info": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Get Full Metric Information",
+        "operationId": "get_full_metric_information_api_v1_system_metric_info_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Filter",
+              "type": "string",
+              "default": ""
+            },
+            "name": "filter",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Full Metric Information Api V1 System Metric Info Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MetricViewSchema"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/system/metric-labels": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Get Metric Labels",
+        "operationId": "get_metric_labels_api_v1_system_metric_labels_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Metric",
+              "type": "string"
+            },
+            "name": "metric",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/system/retention-period": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Get Metric Or Default Retention Period",
+        "description": "Returns retention period for a metric or global default, in days.",
+        "operationId": "get_metric_or_default_retention_period_api_v1_system_retention_period_get",
+        "parameters": [
+          {
+            "description": "If metric is not specified, returns global default retention period",
+            "required": false,
+            "schema": {
+              "title": "Metric",
+              "type": "string",
+              "description": "If metric is not specified, returns global default retention period"
+            },
+            "name": "metric",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Set Metric Or Default Retention Period",
+        "description": "Sets retention period for a metric or global default, in days.",
+        "operationId": "set_metric_or_default_retention_period_api_v1_system_retention_period_post",
+        "parameters": [
+          {
+            "description": "If metric is not specified, sets global default retention period",
+            "required": false,
+            "schema": {
+              "title": "Metric",
+              "type": "string",
+              "description": "If metric is not specified, sets global default retention period"
+            },
+            "name": "metric",
+            "in": "query"
+          },
+          {
+            "description": "Retention period in days",
+            "required": false,
+            "schema": {
+              "title": "Period",
+              "type": "integer",
+              "description": "Retention period in days",
+              "default": 90
+            },
+            "name": "period",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/system/chunk-interval": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Get Metric Or Default Chunk Interval",
+        "description": "Returns chunk interval for a metric or global default, in hours.",
+        "operationId": "get_metric_or_default_chunk_interval_api_v1_system_chunk_interval_get",
+        "parameters": [
+          {
+            "description": "If metric is not specified, returns global default retention period",
+            "required": false,
+            "schema": {
+              "title": "Metric",
+              "type": "string",
+              "description": "If metric is not specified, returns global default retention period"
+            },
+            "name": "metric",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Set Metric Or Default Chunk Interval",
+        "description": "Sets chunk interval for a metric or global default, in hours.",
+        "operationId": "set_metric_or_default_chunk_interval_api_v1_system_chunk_interval_post",
+        "parameters": [
+          {
+            "description": "If metric is not specified, sets global default retention period",
+            "required": false,
+            "schema": {
+              "title": "Metric",
+              "type": "string",
+              "description": "If metric is not specified, sets global default retention period"
+            },
+            "name": "metric",
+            "in": "query"
+          },
+          {
+            "description": "Chunk interval in hours",
+            "required": false,
+            "schema": {
+              "title": "Interval",
+              "type": "integer",
+              "description": "Chunk interval in hours",
+              "default": 8
+            },
+            "name": "interval",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/write/": {
+      "post": {
+        "tags": [
+          "write"
+        ],
+        "summary": "Post Data To Tstore",
+        "description": "Here is a short example of the payload body expected for this endpoint.  \nPay attention to the fact that this is a Streaming JSON format, rather than a regular JSON.   \nSeparate JSON blocks are simply concatenated, without lists or comma.  \n```json\n    {  \n    \"labels\":{\"\\_\\_name__\": \"cpu_usage\", \"namespace\":\"dev\", \"node\": \"brain\"},  \n    \"samples\":[  \n        [1577836800000, 100],  \n        [1577836801000, 99],  \n        [1577836802000, 98],  \n        ...  \n    ]  \n    }  \n    {  \n        \"labels\":{\"\\_\\_name__\": \"cpu_usage\", \"namespace\":\"prod\", \"node\": \"brain\"},  \n        \"samples\":[  \n            [1577836800000, 98],  \n            [1577836801000, 99],  \n            [1577836802000, 100],  \n            ...  \n        ]  \n    }  \n    ...  \n```",
+        "operationId": "post_data_to_tstore_api_v1_write__post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/write/write-data": {
+      "post": {
+        "tags": [
+          "write"
+        ],
+        "summary": "Write Data",
+        "description": "Writes data to tstore.\nThe body is expected in the following format.  \n```json\n    {  \n        \"lookup1\": [\n            {\n                \"ts\": datetime in isoformat,\n                \"v\": any, but only float and integers are currently supported types\n                \"dv\": str (optional)\n            },\n            {\n                ... (as many data points as required)\n            }\n        ],\n        \"lookup2\": [\n            ... (as many lookups as required)\n        ]\n    }  \n```\nLookups must be in the format metric|filter. \nIf there are more parts than these 2, they will be stripped.",
+        "operationId": "write_data_api_v1_write_write_data_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Body",
+                "default": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/read/historical-data": {
+      "post": {
+        "tags": [
+          "read"
+        ],
+        "summary": "Get Historical Data",
+        "operationId": "get_historical_data_api_v1_read_historical_data_post",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Start Time",
+              "type": "string",
+              "default": "*-1h"
+            },
+            "name": "start_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "End Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "end_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Reference Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "reference_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Tz",
+              "type": "string",
+              "default": "UTC"
+            },
+            "name": "tz",
+            "in": "query"
+          },
+          {
+            "description": "Number of results to be skipped",
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "minimum": 0.0,
+              "type": "integer",
+              "description": "Number of results to be skipped",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "description": "Max number of results to be retrieved",
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "maximum": 10000.0,
+              "minimum": 1.0,
+              "type": "integer",
+              "description": "Max number of results to be retrieved",
+              "default": 1000
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Lookups",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "List of lookups. Lookup is metric|filter|agg_type|agg_int.",
+                "default": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/read/trend-data": {
+      "post": {
+        "tags": [
+          "read"
+        ],
+        "summary": "Get Trend Data",
+        "operationId": "get_trend_data_api_v1_read_trend_data_post",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Start Time",
+              "type": "string",
+              "default": "*-1h"
+            },
+            "name": "start_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "End Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "end_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Reference Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "reference_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Tz",
+              "type": "string",
+              "default": "UTC"
+            },
+            "name": "tz",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Width",
+              "type": "integer",
+              "default": 100
+            },
+            "name": "width",
+            "in": "query"
+          },
+          {
+            "description": "Number of results to be skipped",
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "minimum": 0.0,
+              "type": "integer",
+              "description": "Number of results to be skipped",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "description": "Max number of results to be retrieved",
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "maximum": 10000.0,
+              "minimum": 1.0,
+              "type": "integer",
+              "description": "Max number of results to be retrieved",
+              "default": 1000
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Lookups",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "List of lookups. Lookup is metric|filter|agg_type|agg_int.",
+                "default": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/read/current-value": {
+      "post": {
+        "tags": [
+          "read"
+        ],
+        "summary": "Get Current Value",
+        "operationId": "get_current_value_api_v1_read_current_value_post",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Reference Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "reference_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Tz",
+              "type": "string",
+              "default": "UTC"
+            },
+            "name": "tz",
+            "in": "query"
+          },
+          {
+            "description": "Number of results to be skipped",
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "minimum": 0.0,
+              "type": "integer",
+              "description": "Number of results to be skipped",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "description": "Max number of results to be retrieved",
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "maximum": 10000.0,
+              "minimum": 1.0,
+              "type": "integer",
+              "description": "Max number of results to be retrieved",
+              "default": 1000
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Lookups",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "List of lookups. Lookup is metric|filter|agg_type|agg_int.",
+                "default": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/read/historical-value": {
+      "post": {
+        "tags": [
+          "read"
+        ],
+        "summary": "Get Historical Value",
+        "operationId": "get_historical_value_api_v1_read_historical_value_post",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Target Time",
+              "type": "string",
+              "default": "*-1h"
+            },
+            "name": "target_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Reference Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "reference_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Tz",
+              "type": "string",
+              "default": "UTC"
+            },
+            "name": "tz",
+            "in": "query"
+          },
+          {
+            "description": "Number of results to be skipped",
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "minimum": 0.0,
+              "type": "integer",
+              "description": "Number of results to be skipped",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "description": "Max number of results to be retrieved",
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "maximum": 10000.0,
+              "minimum": 1.0,
+              "type": "integer",
+              "description": "Max number of results to be retrieved",
+              "default": 1000
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Lookups",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "List of lookups. Lookup is metric|filter|agg_type|agg_int.",
+                "default": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Login",
+        "description": "Get the JWT for a user with data from OAuth2 request form body.",
+        "operationId": "login_api_v1_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_login_api_v1_auth_login_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/me": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Read Users Me",
+        "description": "Fetch the current logged in user.",
+        "operationId": "read_users_me_api_v1_auth_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_login_api_v1_auth_login_post": {
+        "title": "Body_login_api_v1_auth_login_post",
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "grant_type": {
+            "title": "Grant Type",
+            "pattern": "password",
+            "type": "string"
+          },
+          "username": {
+            "title": "Username",
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "type": "string"
+          },
+          "scope": {
+            "title": "Scope",
+            "type": "string",
+            "default": ""
+          },
+          "client_id": {
+            "title": "Client Id",
+            "type": "string"
+          },
+          "client_secret": {
+            "title": "Client Secret",
+            "type": "string"
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "MetricViewSchema": {
+        "title": "MetricViewSchema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "metric_name": {
+            "title": "Metric Name",
+            "type": "string"
+          },
+          "retention_period": {
+            "title": "Retention Period",
+            "type": "string"
+          },
+          "chunk_interval": {
+            "title": "Chunk Interval",
+            "type": "string"
+          },
+          "compressed_interval": {
+            "title": "Compressed Interval",
+            "type": "string"
+          },
+          "total_interval": {
+            "title": "Total Interval",
+            "type": "string"
+          },
+          "before_compression_bytes": {
+            "title": "Before Compression Bytes",
+            "type": "integer"
+          },
+          "after_compression_bytes": {
+            "title": "After Compression Bytes",
+            "type": "integer"
+          },
+          "total_size_bytes": {
+            "title": "Total Size Bytes",
+            "type": "integer"
+          },
+          "total_size": {
+            "title": "Total Size",
+            "type": "string"
+          },
+          "compression_ratio": {
+            "title": "Compression Ratio",
+            "type": "number"
+          },
+          "total_chunks": {
+            "title": "Total Chunks",
+            "type": "integer"
+          },
+          "compressed_chunks": {
+            "title": "Compressed Chunks",
+            "type": "integer"
+          },
+          "num_series_approx": {
+            "title": "Num Series Approx",
+            "type": "integer"
+          },
+          "num_samples_approx": {
+            "title": "Num Samples Approx",
+            "type": "integer"
+          },
+          "label_keys": {
+            "title": "Label Keys"
+          }
+        }
+      },
+      "User": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "title": "First Name",
+            "type": "string"
+          },
+          "surname": {
+            "title": "Surname",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string",
+            "format": "email"
+          },
+          "is_superuser": {
+            "title": "Is Superuser",
+            "type": "boolean",
+            "default": false
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth2PasswordBearer": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "scopes": {},
+            "tokenUrl": "/api/v1/auth/login"
+          }
+        }
+      }
+    }
+  }
+}

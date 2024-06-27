@@ -5,6 +5,8 @@ const {themes} = require('prism-react-renderer');
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
+const { webpackPlugin } = require('./plugins/webpack-plugin.cjs');
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   themes: [
@@ -23,6 +25,7 @@ const config = {
     ],
   ],
   plugins: [
+    webpackPlugin,
     // [
     //   require.resolve('@cmfcmf/docusaurus-search-local'),
     //   {
@@ -88,7 +91,10 @@ const config = {
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/api-reference.css'),
+          ],
         },
         sitemap: {
           changefreq: 'weekly',
@@ -149,6 +155,30 @@ const config = {
             label: 'Documentation',
             to: 'docs/',
             className: 'docs_btn'
+          },
+          {
+            type: 'dropdown',
+            label: 'API Reference',
+            position: 'left',
+            items: [
+              {
+                label: "tCalc API", 
+                to: "/tcalc",     
+              },
+              {
+                label: "tStore API", 
+                to: "/tstore",     
+              },
+              {
+                label: "GitHub Example", 
+                to: "/github",     
+              },
+              {
+                label: "PetStore Example", 
+                to: "/petstore",     
+              }
+              // ... more items
+            ],
           },
           {
             type: 'search',

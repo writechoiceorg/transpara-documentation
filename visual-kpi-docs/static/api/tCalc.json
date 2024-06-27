@@ -1,0 +1,1124 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Transpara tCalc API",
+    "description": "\n[tCalc temporary management UI](/ui)\n                ",
+    "version": "0.151.0"
+  },
+  "servers": [
+    {
+      "url": "http://borg1.transpara.com:10003",
+      "description": "Live server"
+    }
+  ],
+  "paths": {
+    "/api/v1/calc/": {
+      "get": {
+        "tags": [
+          "calculation"
+        ],
+        "summary": "Get Calculations",
+        "description": "Get calculations (all or filtered by Template IDs)",
+        "operationId": "get_calculations_api_v1_calc__get",
+        "parameters": [
+          {
+            "description": "List of template IDs",
+            "required": false,
+            "schema": {
+              "title": "Templateid",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid4"
+              },
+              "description": "List of template IDs",
+              "default": []
+            },
+            "name": "templateid",
+            "in": "query"
+          },
+          {
+            "description": "Filter templates where name contains this string. Case insensitive",
+            "required": false,
+            "schema": {
+              "title": "Namefilter",
+              "type": "string",
+              "description": "Filter templates where name contains this string. Case insensitive"
+            },
+            "name": "namefilter",
+            "in": "query"
+          },
+          {
+            "description": "Number of results to be skipped",
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "minimum": 0.0,
+              "type": "integer",
+              "description": "Number of results to be skipped",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "description": "Max number of results to be retrieved",
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "maximum": 10000.0,
+              "minimum": 1.0,
+              "type": "integer",
+              "description": "Max number of results to be retrieved",
+              "default": 1000
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Calculations Api V1 Calc  Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TCalculationWeb"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "calculation"
+        ],
+        "summary": "Create Calculation",
+        "description": "Create calculation template.",
+        "operationId": "create_calculation_api_v1_calc__post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Calculations",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/TCalculationWeb"
+                },
+                "description": "Calculation to be created",
+                "default": [
+                  {
+                    "name": "Example Calculation 1",
+                    "templateid": "18aa97c4-19c3-445b-8338-f475f0ef28b2",
+                    "inputs": [
+                      {
+                        "var": "a",
+                        "type": "interface"
+                      }
+                    ],
+                    "outputs": [
+                      {
+                        "var": "out1",
+                        "type": "interface"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Create Calculation Api V1 Calc  Post",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TCalculationWeb"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calc/{id}": {
+      "get": {
+        "tags": [
+          "calculation"
+        ],
+        "summary": "Get Calculation",
+        "description": "Get calculation.",
+        "operationId": "get_calculation_api_v1_calc__id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TCalculationWeb"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "calculation"
+        ],
+        "summary": "Update Calculation",
+        "description": "Update existing calculation.",
+        "operationId": "update_calculation_api_v1_calc__id__put",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Updated Calc",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TCalculationWeb"
+                  }
+                ],
+                "description": "Calculation to be updated",
+                "default": {
+                  "name": "Example Calculation 1",
+                  "templateid": "18aa97c4-19c3-445b-8338-f475f0ef28b2",
+                  "inputs": [
+                    {
+                      "var": "a",
+                      "type": "interface"
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "var": "out1",
+                      "type": "interface"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "calculation"
+        ],
+        "summary": "Delete Calculation",
+        "description": "Delete calculation.",
+        "operationId": "delete_calculation_api_v1_calc__id__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/template/": {
+      "get": {
+        "tags": [
+          "template"
+        ],
+        "summary": "Get Templates",
+        "description": "Get calculation templates (all of filtered by ID and/or execution type).",
+        "operationId": "get_templates_api_v1_template__get",
+        "parameters": [
+          {
+            "description": "List of template IDs to return",
+            "required": false,
+            "schema": {
+              "title": "Id",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid4"
+              },
+              "description": "List of template IDs to return",
+              "default": []
+            },
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "description": "Filter templates by execution type",
+            "required": false,
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/TCalculationExecutionType"
+                }
+              ],
+              "description": "Filter templates by execution type"
+            },
+            "name": "executionType",
+            "in": "query"
+          },
+          {
+            "description": "Filter templates where name contains this string. Case insensitive",
+            "required": false,
+            "schema": {
+              "title": "Namefilter",
+              "type": "string",
+              "description": "Filter templates where name contains this string. Case insensitive"
+            },
+            "name": "namefilter",
+            "in": "query"
+          },
+          {
+            "description": "Number of results to be skipped",
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "minimum": 0.0,
+              "type": "integer",
+              "description": "Number of results to be skipped",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "description": "Max number of results to be retrieved",
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "maximum": 10000.0,
+              "minimum": 1.0,
+              "type": "integer",
+              "description": "Max number of results to be retrieved",
+              "default": 1000
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Templates Api V1 Template  Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TCalculationTemplate"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "template"
+        ],
+        "summary": "Create Template",
+        "description": "Create calculation template.",
+        "operationId": "create_template_api_v1_template__post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Templates",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/TCalculationTemplateWeb"
+                },
+                "description": "Calculation template to be created",
+                "default": [
+                  {
+                    "name": "Example Calculation Template",
+                    "input_vars": [
+                      "a"
+                    ],
+                    "output_vars": [
+                      "out1"
+                    ],
+                    "statements": [
+                      {
+                        "var": "out1",
+                        "statement": "CurrentValue(a) * 1000"
+                      }
+                    ],
+                    "execution": {
+                      "type": "event",
+                      "value": [
+                        "a"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Create Template Api V1 Template  Post",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TCalculationTemplate"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/template/{id}": {
+      "get": {
+        "tags": [
+          "template"
+        ],
+        "summary": "Get Template",
+        "description": "Get calculation template.",
+        "operationId": "get_template_api_v1_template__id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TCalculationTemplate"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "template"
+        ],
+        "summary": "Update Template",
+        "description": "Update existing calculation template.",
+        "operationId": "update_template_api_v1_template__id__put",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Updated Template",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TCalculationTemplateWeb"
+                  }
+                ],
+                "description": "Calculation template to be updated",
+                "default": {
+                  "name": "Example Calculation Template",
+                  "input_vars": [
+                    "a"
+                  ],
+                  "output_vars": [
+                    "out1"
+                  ],
+                  "statements": [
+                    {
+                      "var": "out1",
+                      "statement": "CurrentValue(a) * 1000"
+                    }
+                  ],
+                  "execution": {
+                    "type": "event",
+                    "value": [
+                      "a"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "template"
+        ],
+        "summary": "Delete Template",
+        "description": "Delete calculation template and all calculation instances of it.",
+        "operationId": "delete_template_api_v1_template__id__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/eval/{id}": {
+      "get": {
+        "tags": [
+          "evaluate"
+        ],
+        "summary": "Eval Calculation",
+        "description": "Evaluate a saved calculation by its ID.",
+        "operationId": "eval_calculation_api_v1_eval__id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Evaluate At",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "evaluate_at",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Output Results",
+              "type": "boolean",
+              "default": false
+            },
+            "name": "output_results",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/eval/functions/": {
+      "get": {
+        "tags": [
+          "evaluate"
+        ],
+        "summary": "Get Functions",
+        "operationId": "get_functions_api_v1_eval_functions__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/backfill/calculation/{id}": {
+      "post": {
+        "tags": [
+          "backfill"
+        ],
+        "summary": "Backfill Calculation",
+        "description": "Backfill data for a saved calculation by its ID.",
+        "operationId": "backfill_calculation_api_v1_backfill_calculation__id__post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "From Time",
+              "type": "string",
+              "default": "*-1h"
+            },
+            "name": "from_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "To Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "to_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/backfill/template/{id}": {
+      "post": {
+        "tags": [
+          "backfill"
+        ],
+        "summary": "Backfill Template",
+        "description": "Backfill data for all calculation of a given template.",
+        "operationId": "backfill_template_api_v1_backfill_template__id__post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string",
+              "format": "uuid4"
+            },
+            "name": "id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "From Time",
+              "type": "string",
+              "default": "*-1h"
+            },
+            "name": "from_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "To Time",
+              "type": "string",
+              "default": "*"
+            },
+            "name": "to_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "TCalculationExecution": {
+        "title": "TCalculationExecution",
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {}
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        }
+      },
+      "TCalculationExecutionType": {
+        "title": "TCalculationExecutionType",
+        "enum": [
+          "interval",
+          "event"
+        ],
+        "description": "An enumeration."
+      },
+      "TCalculationInputOutputParameter": {
+        "title": "TCalculationInputOutputParameter",
+        "required": [
+          "var",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "var": {
+            "title": "Var",
+            "type": "string"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "interface_id": {
+            "title": "Interface Id",
+            "type": "string"
+          },
+          "config": {
+            "title": "Config"
+          }
+        }
+      },
+      "TCalculationStatement": {
+        "title": "TCalculationStatement",
+        "required": [
+          "var",
+          "statement"
+        ],
+        "type": "object",
+        "properties": {
+          "var": {
+            "title": "Var",
+            "type": "string"
+          },
+          "statement": {
+            "title": "Statement",
+            "type": "string"
+          }
+        }
+      },
+      "TCalculationTemplate": {
+        "title": "TCalculationTemplate",
+        "required": [
+          "id",
+          "name",
+          "input_vars",
+          "output_vars",
+          "statements",
+          "execution"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "format": "uuid4"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "input_vars": {
+            "title": "Input Vars",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "output_vars": {
+            "title": "Output Vars",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "statements": {
+            "title": "Statements",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TCalculationStatement"
+            }
+          },
+          "execution": {
+            "$ref": "#/components/schemas/TCalculationExecution"
+          }
+        }
+      },
+      "TCalculationTemplateWeb": {
+        "title": "TCalculationTemplateWeb",
+        "required": [
+          "name",
+          "input_vars",
+          "output_vars",
+          "statements",
+          "execution"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "format": "uuid4"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "input_vars": {
+            "title": "Input Vars",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "output_vars": {
+            "title": "Output Vars",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "statements": {
+            "title": "Statements",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TCalculationStatement"
+            }
+          },
+          "execution": {
+            "$ref": "#/components/schemas/TCalculationExecution"
+          }
+        }
+      },
+      "TCalculationWeb": {
+        "title": "TCalculationWeb",
+        "required": [
+          "name",
+          "templateid",
+          "inputs",
+          "outputs"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "format": "uuid4"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "templateid": {
+            "title": "Templateid",
+            "type": "string",
+            "format": "uuid4"
+          },
+          "inputs": {
+            "title": "Inputs",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TCalculationInputOutputParameter"
+            }
+          },
+          "outputs": {
+            "title": "Outputs",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TCalculationInputOutputParameter"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
