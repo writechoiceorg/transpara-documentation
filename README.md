@@ -74,7 +74,7 @@ When the WriteChoice team creates or updates some content, they will require a r
 
 4. Access the **Files Changed** tab, where you can check all files that have been changed. If you're using the split preview, the original files appear on the left (lines modified are highlighted in red) and the new version appears on the right (modifications are highlighted in green). 
 
-![Files changed](/assets/files-changed.png "Files changed")
+![Files changed](/assets/files-changed.png "Files changed") 
 
 5. To add a review, move your mouse over the modified file. A blue button will appear on the line beginning. By clicking on it, a review window will appear.
 6. Add your review regarding the new content. You can tag users on your review by adding **@username**. After adding the review, click **Start Review**. You repeat the process as many times as necessary. 
