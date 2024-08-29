@@ -1,15 +1,5 @@
 [
   {
-    "name": "AnyLog",
-    "logo": "anylog",
-    "description": ""
-  },
-  {
-    "name": "Cumulocity",
-    "logo": "cumulocity",
-    "description": ""
-  },
-  {
     "name": "eGauge",
     "logo": "egauge",
     "description": ""
@@ -55,18 +45,8 @@
     "description": ""
   },
   {
-    "name": "Quandl",
-    "logo": "quandl",
-    "description": ""
-  },
-  {
     "name": "MarketView",
     "logo": "marketview",
-    "description": ""
-  },
-  {
-    "name": "NIWNAS",
-    "logo": "niwnas",
     "description": ""
   },
   {
@@ -120,18 +100,8 @@
     "description": ""
   },
   {
-    "name": "TempolQ",
-    "logo": "tempolq",
-    "description": ""
-  },
-  {
     "name": "Transpara tStore",
     "logo": "tstore",
-    "description": ""
-  },
-  {
-    "name": "Tomorrow.io",
-    "logo": "tomorrow",
     "description": ""
   },
   {
@@ -152,11 +122,6 @@
   {
     "name": "Wonderware Historian ODBC",
     "logo": "wonderware",
-    "description": ""
-  },
-  {
-    "name": "Xompass",
-    "logo": "xompass",
     "description": ""
   },
   {
