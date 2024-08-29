@@ -1,5 +1,5 @@
-* {
-  font-family: 'Raleway' !important;
+html {
+  font-family: Raleway !important;
 }
 
 .header_container {
@@ -14,7 +14,7 @@
 .header_container h1 {
   /* font-size: 65.1px; */
   margin-bottom: 20px;
-  font-family: 'Raleway' !important;
+  font-family: "Raleway" !important;
   color: #282a30;
   font-size: 80px;
   font-style: normal;
@@ -26,7 +26,7 @@
 .header_container .first_column p {
   margin: 0 0 40px 12px;
   max-width: 462px;
-  font-family: 'Raleway' !important;
+  font-family: "Raleway" !important;
   color: #282a30;
   font-size: 23.762px;
   font-style: normal;
@@ -146,27 +146,27 @@
 }
 
 .cards_container .card .image1 {
-  background-image: url('../../static/img/homepage/card1.png');
+  background-image: url("../../static/img/homepage/card1.png");
 }
 
 .cards_container .card .image2 {
-  background-image: url('../../static/img/homepage/card2.png');
+  background-image: url("../../static/img/homepage/card2.png");
 }
 
 .cards_container .card .image3 {
-  background-image: url('../../static/img/homepage/card3.png');
+  background-image: url("../../static/img/homepage/card3.png");
 }
 
 .cards_container .card .image4 {
-  background-image: url('../../static/img/homepage/card4.png');
+  background-image: url("../../static/img/homepage/card4.png");
 }
 
 .cards_container .card .image5 {
-  background-image: url('../../static/img/homepage/card5.png');
+  background-image: url("../../static/img/homepage/card5.png");
 }
 
 .cards_container .card .image6 {
-  background-image: url('../../static/img/homepage/card6.png');
+  background-image: url("../../static/img/homepage/card6.png");
 }
 
 /* .cards_container .card_text {
@@ -178,7 +178,7 @@
   margin: 0;
   /* margin-top: 5px; */
   color: #282a30;
-  font-family: 'Raleway' !important;
+  font-family: "Raleway" !important;
   font-size: 17.5px;
   font-style: normal;
   font-weight: 700 !important;

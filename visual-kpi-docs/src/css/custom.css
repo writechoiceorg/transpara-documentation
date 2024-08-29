@@ -200,3 +200,7 @@
 .container.margin-vert--lg .row .col.col--7 {
   background-color: #fff !important;
 }
+
+pre code {
+  background-color: rgb(246, 247, 248);
+}
