@@ -6,7 +6,7 @@
 
 .filters_container .filter_label {
   color: #690;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
   font-family: Raleway;
   font-size: 14px;
   font-style: normal;
@@ -21,7 +21,7 @@
   border-radius: 5px;
   background: #607c0d;
   color: #fff;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
   font-family: Raleway;
   font-size: 14px;
   font-style: normal;
@@ -84,7 +84,7 @@
   border: 0;
   background: #607c0d;
   color: #fff;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
   font-family: Raleway;
   font-size: 14px;
   font-style: normal;
@@ -128,7 +128,7 @@ table thead th {
   text-align: left;
   background: #690 !important;
   color: #fff;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
   font-family: Raleway;
   font-size: 14px;
   font-style: normal;
@@ -143,17 +143,16 @@ table thead th {
 table tr td {
   background-color: #ffffff;
   color: #8e8e8e;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
   font-family: Raleway;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  padding: 20px;
   text-align: start;
   vertical-align: top;
-  word-break: break-all !important;
-  word-wrap: break-word !important;
+  word-break: keep-all !important;
+  word-wrap: normal !important;
 }
 
 table thead tr {
