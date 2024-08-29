@@ -31,6 +31,19 @@ const config = {
     // ],
     require.resolve('docusaurus-plugin-image-zoom'),
     'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'changelog',
+        routeBasePath: 'changelog',
+        path: './changelog',
+        blogSidebarCount: 'ALL',
+        blogSidebarTitle: 'Changelog',
+        showReadingTime: false,
+        blogTitle: 'Changelog',
+        blogDescription: 'Changelog',
+      },
+    ],
   ],
 
   title: 'Visual KPI',
@@ -150,6 +163,7 @@ const config = {
             to: 'docs/',
             className: 'docs_btn'
           },
+          {to: 'changelog', label: 'Changelog', position: 'left', className: 'changelog_btn'},
           {
             type: 'search',
             position: 'right',

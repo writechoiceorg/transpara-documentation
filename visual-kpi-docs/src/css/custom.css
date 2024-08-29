@@ -5,8 +5,8 @@
  */
 
 /* You can override the default Infima variables here. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --ifm-color-primary: #669900;
@@ -31,7 +31,7 @@
   --transpara-optional-color3: #e8e8e8;
   --transpara-highlights-color1: #ff6600;
   --transpara-highlights-color2: #6699cc;
-  --ifm-font-family-base: 'Inter', system-ui, sans-serif !important;
+  --ifm-font-family-base: "Inter", system-ui, sans-serif !important;
   /* Search bar configurations. */
   --aa-primary-color-rgb: 102, 153, 0 !important;
   --aa-muted-color-rgb: 102, 153, 0 !important;
@@ -40,7 +40,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -53,7 +53,7 @@
 
 /* Set Open Sans as the default font for the entire website */
 * {
-  font-family: 'Open Sans' !important;
+  font-family: "Open Sans" !important;
 }
 
 .row .col:first-child:not(.footer__col) {
@@ -66,7 +66,7 @@
 }
 
 #__docusaurus {
-  background-image: url('../../static/img/circles-background-opaque.png');
+  background-image: url("../../static/img/circles-background-opaque.png");
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
@@ -157,14 +157,14 @@
 }
 
 .pagination-nav__link--next .pagination-nav__label:after {
-  content: '🡢' !important;
+  content: "🡢" !important;
   position: absolute;
   right: 16px;
   top: 12px;
 }
 
 .pagination-nav__link--prev .pagination-nav__label:before {
-  content: '🡠' !important;
+  content: "🡠" !important;
   position: absolute;
   left: 16px;
   top: 12px;
@@ -191,4 +191,17 @@
 
 .python-interface-logo {
   cursor: pointer !important;
+}
+
+.container.margin-vert--lg .row {
+  background-color: #fff !important;
+  flex-wrap: nowrap;
+}
+
+.container.margin-vert--lg .row aside.col.col--3 {
+  background-color: transparent !important;
+}
+
+.container.margin-vert--lg .row .col.col--7 {
+  background-color: #fff !important;
 }
