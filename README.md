@@ -2,7 +2,7 @@
 
 Welcome to the Visual KPI Documentation repository. This documentation project is powered by Docusaurus, providing a user-friendly and organized platform for learning and reference.
 
-## Table of Contents
+## Table of Contents 
 
 - [Visual KPI Documentation Page](#visual-kpi-documentation-page)
 - [Project Organization](#project-organization)
