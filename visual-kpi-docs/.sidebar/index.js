@@ -4,6 +4,7 @@ const designer = require('./designer');
 const endUser = require('./end-user');
 const referenceGuides = require('./reference-guides');
 const supportingPages = require('./supporting-pages');
+const tcalc = require('./tcalc');
 
 module.exports = {
   gettingStarted,
@@ -11,5 +12,6 @@ module.exports = {
   designer,
   endUser,
   referenceGuides,
-  supportingPages
+  supportingPages,
+  tcalc
 };

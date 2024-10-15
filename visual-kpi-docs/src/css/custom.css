@@ -54,6 +54,7 @@
 /* Set Open Sans as the default font for the entire website */
 * {
   font-family: "Open Sans" !important;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 3.2rem) !important;
 }
 
 .row .col:first-child:not(.footer__col) {

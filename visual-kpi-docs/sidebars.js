@@ -15,7 +15,8 @@ const {
   designer,
   endUser,
   referenceGuides,
-  supportingPages 
+  supportingPages,
+  tcalc 
 } = require('./.sidebar');
 
 // @ts-check

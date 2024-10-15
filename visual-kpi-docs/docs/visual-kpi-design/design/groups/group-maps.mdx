@@ -48,6 +48,19 @@ To access global settings for Group Maps:
   alt="Group Map End User"
 />
 
+### Available Global Settings
+
+The Group Map Settings provides key configuration options for Group Maps, allowing you to customize their appearance and behavior. Below is a breakdown of the available global settings and their functions.
+
+- **Default Group Map KPI Cell Count**: Specifies the number of KPI cells displayed per Group Map page (range: 1-20).
+- **Default Group Map Header Priority**: Determines the Group Map header behavior based on priority: Overall, Recently Changed, or Custom Colors.
+- **Recently Changed Color**: Sets the header color for Group Maps when one or more KPIs have been recently updated.
+- **Not Recently Changed Color**: Sets the header color for Group Maps when no recent KPI changes are present.
+- **Group Map Fit to Page**: A TRUE/FALSE setting to control if the Group Map is automatically resized to fit the page.
+- **Default Group Map Expansion Setting**: Controls whether the Group Map is collapsed or expanded by default.
+- **Group Map Header Severity**: Defines how the system calculates the severity of a Group Map header based on System or Display Order.
+- **Default Group Map Header Click Path**: Configures what happens when a user clicks the header: it can either lead to a List or a URL.
+
 ## Select and Position KPIs in Group Maps
 
 Once you configure Group Map settings, you need to choose KPIs and their positions for the Group Map.
@@ -85,3 +98,16 @@ By default, Visual KPI will display 10 KPIs in a Group Map. You can change the s
 />
 
 In the **Group Map KPI Cell Count** attribute column, change or add a number to indicate the number of KPIs you want to display in the Group Map for the group you've just selected.
+
+## Override Default Map Header Click Path
+
+By default, Visual KPI will display a list when the user clicks on a group map header. You can change the global setting in the Global Settings, or you can use a group override.
+
+1. Open the Groups worksheet from the Groups tab.
+2. Select the group you want to override.
+3. Find the name of the group in the worksheet, and then scroll across the page to find the override setting for **Group Map Header Click Path** in the attributes column headers.
+
+<StylizedImage
+  imgURL="img/designer/group-map-header-override.png"
+  alt="Group Map Header Click Path"
+/>

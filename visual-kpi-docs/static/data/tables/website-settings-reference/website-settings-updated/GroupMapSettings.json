@@ -26,5 +26,9 @@
   {
     "Attribute": "Group Map Header Severity",
     "Description": "Controls how the system calculates severity of status for use in header colors and icons. (Note: Not In Service always overrides other statuses)."
+  },
+  {
+    "Attribute": "Default Group Map Header Click Path",
+    "Description": "Controls what happens when a user clicks the header of a Group Map. The user will either be shown the List of the KPIs in the group (default) or the user will be taken to the first Link defined on the Group (if one exists)."
   }
 ]

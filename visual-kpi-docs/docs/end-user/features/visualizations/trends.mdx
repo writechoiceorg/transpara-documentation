@@ -28,8 +28,9 @@ You can do many different things with Trends to see data in various ways. When v
 11. **Drag Mode** (<SvgFont icon="180"/>): Click and drag to change the time view.
 12. **Cursor Mode** (<SvgFont icon="242"/>): Scroll over the trend chart with your mouse to see more data details associated with specific points in time along the Trend. Clicking or tapping on the Trend will lock the current cursor and let you add additional cursors for comparison.
 13. **Snap to** (<SvgFont icon="228"/>): Snap your cursor to point along the trend line where actual values exist in the data source, highlighting the difference between actual values and interpolated lines drawn between values.
-14. **Timestamp** (<SvgFont icon="148"/>/<SvgFont icon="149"/>): Use paddles to change the time view.
-15. **Legend**: You can define the limits and references for your Trend and name each of those references as you like. These names will be shown on the legend.
+14. **Comments** (<SvgFont icon="235"/>): Click the comments icon to view and add comments at specific times in the Trend. You can click a specific point or click and drag to select a time span. Comments can include pre-defined messages or customized ones. You can also reply to existing comments.
+15. **Timestamp** (<SvgFont icon="148"/>/<SvgFont icon="149"/>): Use paddles to change the time view.
+16. **Legend**: You can define the limits and references for your Trend and name each of those references as you like. These names will be shown on the legend.
 
 <StylizedImage
   imgURL="img/docs/end-user/features/visualization/trends/features-visualization-trendtopbar.png"
@@ -59,6 +60,17 @@ The trend scale feature enables you to use single or multi-scale in a Trend. The
   alt="Trend scale option"
 />
 
+### Trend Gestures
+
+Trend Gestures in VisualKPI allow users to interact with trend charts more dynamically and in detail, enhancing the ability to analyze and interpret data visually. These gestures are primarily performed using a mouse or touch interface, depending on the device. The first gesture is the **Mouse Wheel Zoom**, where you can zoom in and out of the trend chart by scrolling the mouse wheel. The zoom is centered on the current position of the mouse pointer, allowing you to focus on specific areas of the trend. Additionally, holding down the **Control** key while scrolling will zoom only along the x-axis, while holding the **Alt** key will zoom along the y-axis. The **Pinch-to-Zoom** gesture offers similar functionality for touch devices like tablets, allowing users to zoom in and out using two fingers.
+
+Another powerful feature is the **Box Zoom**. When drawing a large rectangle on the chart, the selected area zooms in, providing a closer view of the data. However, if you draw a horizontal line or narrow rectangle, the zoom will apply only to the selected time period, but with the ideal zoom to visualize everything in that period. These gestures, while more commonly used on desktop setups, can also be utilized on mobile devices, allowing users to interact precisely with Trends, even on the go.
+
+<StylizedImage
+  imgURL="img/docs/end-user/features/visualization/trends/features-visualization-trendgestures.gif"
+  alt="Trend gestures"
+/>
+
 ### Trend type
 
 Change the Trend Type to view Interpolated, Step, Symbol, or a combination of views. The Default Trend Type is interpolated unless set by your admin in the Visual KPI Designer.
@@ -83,7 +95,7 @@ From any KPI list view, click the **Select KPI** icon (<SvgFont icon="255"/>) an
 <StylizedImage
   imgURL="img/docs/end-user/features/visualization/trends/features-visualization-trendoptions-cut.png"
   alt="Visualization Trend Options"
-/>
+/>ß
 
 Regardless of the trend or chart type you selected to view, you can use the menu in the new view to choose any of the other trends or chart types to visualize data in. When in a trend, you can add a background color to show status changes over time using the Show Status Background icon.
 

@@ -1,0 +1,43 @@
+---
+id: tcalc-glossary
+title: tCalc Glossary
+slug: tcalc-glossary
+description: ''
+tags: ['documentation']
+---
+
+- **tCalc**: The overall solution that integrates various tools for building and managing calculations, formulas, and data within the tModel. It includes features for building, storing, and executing calculations.
+
+- **tStudio**: The tool within tCalc used for building formulas and calculations. It provides users with an interface to create calculations that will later be shown and used within the tCalc system by other users.
+
+- **tModel (tGraph)**: A hierarchical representation of an organization or system, where users can manage objects. The tModel is stored in the tGraph system and allows management of objects with attributes and properties.
+
+- **Object**: An entity in tModel that can have attributes and properties. Objects are organized hierarchically in tModel.
+
+- **Attribute**: A characteristic of an object in tModel. Each attribute may have associated properties.
+
+- **KPI (Key Performance Indicator)**: A measured value that is compared against defined limits to calculate a status. KPIs are dynamic and require a status based on predefined thresholds or targets.
+
+- **Metric**: A measured value similar to a KPI but without status or comparison logic. Metrics track values but don't include the comparison to targets or limits seen in KPIs.
+
+- **Node**: Previously referred to as 'Group,' a node is an organizational unit within tModel. It can act as a container for metrics, KPIs, and calculations.
+
+- **Dynamic Value**: An attribute whose value is sourced from an external data stream or system. This value can change automatically as data updates from a source.
+
+- **Static Value**: An attribute whose value is manually entered by the user and does not change automatically unless updated.
+
+- **Interface**: A connector that links data sources to tModel, allowing for dynamic data retrieval. Interfaces support various systems like tStore, OSISoft PI, and relational databases.
+
+- **tStore**: An internal data storage system for time series data within the Transpara ecosystem. It supports standardized interfaces for data retrieval.
+
+- **Lookup**: A method of locating a specific data point within a system, typically tied to an interface. Lookups vary by data source and help define the unique data points in systems like tStore or OSISoft PI.
+
+- **Calculation**: A series of steps that derive a result based on input values, often tied to KPIs or metrics. Calculations can include multiple input parameters and are executed either on a schedule or in response to an event.
+
+- **Trigger**: A condition or event that causes a calculation to execute. Triggers can be time-based (e.g., every 30 seconds) or event-based (e.g., when new data is available).
+
+- **Template**: A reusable set of attributes, KPIs, metrics, and calculations defined for a specific object type, such as a transformer. Templates standardize calculations and attributes across multiple instances of similar objects.
+
+- **Break Statement**: A special function in a calculation that halts further calculation if a specified condition is not met, improving performance by stopping unnecessary operations.
+
+- **Eventual Consistency**: The principle that data will eventually become consistent across all systems, though calculations may not always occur in real time due to delays in execution.
