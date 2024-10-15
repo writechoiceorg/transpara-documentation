@@ -71,6 +71,13 @@ const sidebars = {
       className: 'sidebar_title',
     },
     ...supportingPages,
+    {
+      type: 'html',
+      value: '<span class=\'sidebar_title\'>tCalc</span>',
+      defaultStyle: true,
+      className: 'sidebar_title',
+    },
+    ...tcalc,
   ],
 };
 
