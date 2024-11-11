@@ -1,0 +1,38 @@
+[
+  {
+    "Object Type": "KPI",
+    "Valid Value for Attribute": "KPI"
+  },
+  {
+    "Object Type": "Bar Chart",
+    "Valid Value for Attribute": "Bar, Bar Chart, BarChart"
+  },
+  {
+    "Object Type": "Embedded Content",
+    "Valid Value for Attribute": "Embedded, Embedded Content, EmbeddedContent"
+  },
+  {
+    "Object Type": "Gannt Chart",
+    "Valid Value for Attribute": "Gantt, Gantt Chart, GanttChart"
+  },
+  {
+    "Object Type": "Pareto Chart",
+    "Valid Value for Attribute": "Pareto, Pareto Chart, ParetoChart"
+  },
+  {
+    "Object Type": "Pie Chart",
+    "Valid Value for Attribute": "Pie, Pie Chart, PieChart"
+  },
+  {
+    "Object Type": "Trend",
+    "Valid Value for Attribute": "Trend"
+  },
+  {
+    "Object Type": "XY Plot",
+    "Valid Value for Attribute": "XY, XY Plot, XYPlot"
+  },
+  {
+    "Object Type": "Table",
+    "Valid Value for Attribute": "Table"
+  }
+]

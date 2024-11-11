@@ -1,0 +1,26 @@
+[
+  {
+    "Operator": "AND &&",
+    "Num": "",
+    "Date": "",
+    "Str": "",
+    "Bool": "yes",
+    "Description": "Logical AND"
+  },
+  {
+    "Operator": "OR ||",
+    "Num": "",
+    "Date": "",
+    "Str": "",
+    "Bool": "yes",
+    "Description": "Logical OR"
+  },
+  {
+    "Operator": "NOT !",
+    "Num": "",
+    "Date": "",
+    "Str": "",
+    "Bool": "yes",
+    "Description": "Logical Negation"
+  }
+]

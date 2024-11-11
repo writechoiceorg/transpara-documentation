@@ -1,0 +1,50 @@
+[
+  {
+    "Operator": "<",
+    "Num": "yes",
+    "Date": "yes",
+    "Str": "yes",
+    "Bool": "",
+    "Description": "Less than"
+  },
+  {
+    "Operator": ">",
+    "Num": "yes",
+    "Date": "yes",
+    "Str": "yes",
+    "Bool": "",
+    "Description": "Greater than"
+  },
+  {
+    "Operator": "<=",
+    "Num": "yes",
+    "Date": "yes",
+    "Str": "yes",
+    "Bool": "",
+    "Description": "Less than or equal"
+  },
+  {
+    "Operator": ">=",
+    "Num": "yes",
+    "Date": "yes",
+    "Str": "yes",
+    "Bool": "",
+    "Description": "Greater than or equal"
+  },
+  {
+    "Operator": "equals (== or =)",
+    "Num": "yes",
+    "Date": "yes",
+    "Str": "yes",
+    "Bool": "yes",
+    "Description": "Equality"
+  },
+  {
+    "Operator": "!= or <>",
+    "Num": "yes",
+    "Date": "yes",
+    "Str": "yes",
+    "Bool": "yes",
+    "Description": "Inequality"
+  }
+]

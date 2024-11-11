@@ -1,0 +1,34 @@
+[
+  {
+    "Constant": "dtSystem",
+    "Numeric Value": "0"
+  },
+  {
+    "Constant": "dtSunday",
+    "Numeric Value": "1"
+  },
+  {
+    "Constant": "dtMonday",
+    "Numeric Value": "2"
+  },
+  {
+    "Constant": "dtTuesday",
+    "Numeric Value": "3"
+  },
+  {
+    "Constant": "dtWednesday",
+    "Numeric Value": "4"
+  },
+  {
+    "Constant": "dtThursday",
+    "Numeric Value": "5"
+  },
+  {
+    "Constant": "dtFriday",
+    "Numeric Value": "6"
+  },
+  {
+    "Constant": "dtSaturday",
+    "Numeric Value": "7"
+  }
+]

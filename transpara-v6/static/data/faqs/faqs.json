@@ -1,0 +1,82 @@
+[
+  {
+      "link": "add-logo-image-text",
+      "q": "Is it possible to add a logo, image, or text box label to the Dashboard?"
+  },
+  {
+      "link": "dashboard-navigation",
+      "q": "Is Dashboard to Dashboard navigation possible?"
+  },
+  {
+      "link": "delete-interface",
+      "q": "How do I delete an Interface from Visual KPI Server Manager?"
+  },
+  {
+      "link": "drag-trends-chrome",
+      "q": "When using Chrome on a touchscreen, why can't I drag trends in Visual KPI using a cursor?"
+  },
+  {
+      "link": "find-expiration-date",
+      "q": "Where Can I Find the Expiration Date of My Visual KPI License?"
+  },
+  {
+      "link": "get-hash-values",
+      "q": "How to obtain hash values for the Visual KPI installation?"
+  },
+  {
+      "link": "hide-navigation-menu",
+      "q": "Can I hide the Visual KPI navigation menu by default?"
+  },
+  {
+      "link": "missing-toolbar",
+      "q": "Why is part of Visual KPI Designer toolbar missing in the Document Actions pane?"
+  },
+  {
+      "link": "opc-interface-support",
+      "q": "Does Visual KPI OPC Interface Support Real-time & Historian Values?"
+  },
+  {
+      "link": "override-kpi-status",
+      "q": "Can I override the status of a KPI?"
+  },
+  {
+      "link": "ports-for-firewall",
+      "q": "What ports does Visual KPI need to access an interface located behind a firewall?"
+  },
+  {
+      "link": "print-save-pdf",
+      "q": "Can I print or save to PDF my dashboards/reports?"
+  },
+  {
+      "link": "remove-hash-symbol",
+      "q": "Can the # symbol be removed for a KPI with no Low-High interface?"
+  },
+  {
+      "link": "search-fields-attributes",
+      "q": "Visual KPI Search: What Fields or Attributes Are Used?"
+  },
+  {
+      "link": "send-alerts-office365",
+      "q": "Can I send Alerts via Microsoft Office 365?"
+  },
+  {
+      "link": "set-asset-status",
+      "q": "How Do I Set an Asset Status to 'Not in Service' and Stop Alerts?"
+  },
+  {
+      "link": "share-dashboard",
+      "q": "Can I share, open or link to a specific dashboard, regardless of what profile is currently selected?"
+  },
+  {
+      "link": "share-link-dashboard",
+      "q": "How to share or link to a specific Dashboard?"
+  },
+  {
+      "link": "use-olap-interface",
+      "q": "Can the OLAP Interface be used for data which has both a time and date field in the cube?"
+  },
+  {
+      "link": "why-license-key-error",
+      "q": "Why do I get a license key error message in Visual KPI Server Manager?"
+  }
+]

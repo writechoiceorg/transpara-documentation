@@ -1,0 +1,62 @@
+[
+  {
+    "option": "OSIsoft PI",
+    "drivers": " PI SDK, AF SDK, PI RDA"
+  },
+  {
+    "option": "AF",
+    "drivers": "PI SDK, AF SDK, PI RDA"
+  },
+  {
+    "option": "SQL",
+    "drivers": "SQL Management Studio or SQL driver"
+  },
+  {
+    "option": "Oracle",
+    "drivers": "Oracle Drivers with ODAC and test them with Toad"
+  },
+  {
+    "option": "Any other relational database",
+    "drivers": "ODBC drivers"
+  },
+  {
+    "option": "Any OLAP data source",
+    "drivers": "OLAP drivers"
+  },
+  {
+    "option": "Wonderware",
+    "drivers": "Wonderware SDK"
+  },
+  {
+    "option": "GE Proficy",
+    "drivers": "Proficy SDK"
+  },
+  {
+    "option": "AspenTech",
+    "drivers": "SQL driver"
+  },
+  {
+    "option": "inmation",
+    "drivers": "No drivers required"
+  },
+  {
+    "option": "JSON",
+    "drivers": "No drivers required"
+  },
+  {
+    "option": "Cloud and IT monitoring tools",
+    "drivers": "Ask us"
+  },
+  {
+    "option": "Open source time-series sources, like InfluxDB, Prometheus, etc. ",
+    "drivers": "Ask us"
+  },
+  {
+    "option": "Rockwell FactoryTalk Historian (OEM version of OSIsoft PI)",
+    "drivers": "SDK"
+  },
+  {
+    "option": "If you don’t see your preferred data source",
+    "drivers": "Just ask us (thousands supported!)"
+  }
+]

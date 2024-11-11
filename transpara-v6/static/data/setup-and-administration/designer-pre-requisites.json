@@ -1,0 +1,22 @@
+[
+  {
+    "Prerequisite": "OS Version",
+    "Details": "Microsoft Windows XP, Vista,\u00a0Win 7 or 8;\n  Windows Server 2003 or Newer"
+  },
+  {
+    "Prerequisite": "User Rights",
+    "Details": "Local Admin"
+  },
+  {
+    "Prerequisite": ".NET Framework 4.0",
+    "Details": "Client Profile (added during Visual KPI Designer installation)"
+  },
+  {
+    "Prerequisite": "Microsoft Excel",
+    "Details": "Microsoft Excel 2007, 2010, 2013 or 2016"
+  },
+  {
+    "Prerequisite": "Office Integration",
+    "Details": "(usually already installed by Windows or during the Visual KPI Designer installation)\nVisual Studio 2010 Tools for Office Runtime\n  (added during Visual KPI Designer installation)\nOffice 2010 Primary Interop Assemblies\n  (added during Visual KPI Designer installation)"
+  }
+]

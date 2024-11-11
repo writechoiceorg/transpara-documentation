@@ -1,0 +1,50 @@
+[
+  {
+    "Operator": "plus(+)",
+    "Num": "yes",
+    "Date": "",
+    "Str": "yes",
+    "Bool": "",
+    "Description": "Positive sign or arithmetic addition"
+  },
+  {
+    "Operator": "\u2013",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Negative sign or arithmetic subtraction"
+  },
+  {
+    "Operator": "*",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Multiplication"
+  },
+  {
+    "Operator": "/",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Division"
+  },
+  {
+    "Operator": "%",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Remainder (modulus) obtained by dividing one numeric expression into another"
+  },
+  {
+    "Operator": "^",
+    "Num": "yes",
+    "Date": "",
+    "Str": "",
+    "Bool": "",
+    "Description": "Power"
+  }
+]

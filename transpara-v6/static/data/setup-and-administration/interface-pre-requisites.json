@@ -1,0 +1,22 @@
+[
+  {
+    "Prerequisite": "OS Version",
+    "Details": "Windows Server 2008 R2 or newer"
+  },
+  {
+    "Prerequisite": "User Rights",
+    "Details": "Local Admin"
+  },
+  {
+    "Prerequisite": "Visual KPI Server & Server Manager",
+    "Details": "Installed"
+  },
+  {
+    "Prerequisite": "Data Source Client Tools",
+    "Details": "Installed on the Visual KPI Server for access to desired data sources \nExamples:\n<ul><li>SQL Server Management Studio</li><li>Oracle drivers</li><li>PI SDK</li><li>OSIsoft</li></ul>"
+  },
+  {
+    "Prerequisite": "Testing Tools",
+    "Details": "Used for testing interfaces, such as Toad"
+  }
+]

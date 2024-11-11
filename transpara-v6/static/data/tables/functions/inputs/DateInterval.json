@@ -1,0 +1,52 @@
+[
+  {
+    "Constant": "dtYear",
+    "Numeric Value": "0",
+    "String Expression": "yyyy"
+  },
+  {
+    "Constant": "dtQuarter",
+    "Numeric Value": "1",
+    "String Expression": "q"
+  },
+  {
+    "Constant": "dtMonth",
+    "Numeric Value": "2",
+    "String Expression": "m"
+  },
+  {
+    "Constant": "dtDayOfYear",
+    "Numeric Value": "3",
+    "String Expression": "y"
+  },
+  {
+    "Constant": "dtDay",
+    "Numeric Value": "4",
+    "String Expression": "d"
+  },
+  {
+    "Constant": "dtWeekOfYear",
+    "Numeric Value": "5",
+    "String Expression": "ww"
+  },
+  {
+    "Constant": "dtWeekday",
+    "Numeric Value": "6",
+    "String Expression": "w"
+  },
+  {
+    "Constant": "dtHour",
+    "Numeric Value": "7",
+    "String Expression": "h"
+  },
+  {
+    "Constant": "dtMinute",
+    "Numeric Value": "8",
+    "String Expression": "n"
+  },
+  {
+    "Constant": "dtSecond",
+    "Numeric Value": "9",
+    "String Expression": "s"
+  }
+]

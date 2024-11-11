@@ -1,0 +1,18 @@
+[
+  {
+    "Constant": "PI",
+    "Value": "3.141592654"
+  },
+  {
+    "Constant": "E",
+    "Value": "2.718281828"
+  },
+  {
+    "Constant": "TRUE",
+    "Value": "1"
+  },
+  {
+    "Constant": "FALSE",
+    "Value": "0"
+  }
+]

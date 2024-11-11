@@ -1,0 +1,47 @@
+[
+  {
+    "Method": "IIF(bool condition, expression1, expression2) IF(bool condition, expression1,\n          expression2)",
+    "Return Type": "any",
+    "Description": "If condition evaluates to TRUE, expression1 is returned. If conditionevaluates to FALSE,\n        expression2 is returned. This function accepts any type for its second and third parameters as long as they\n        are both of the same type."
+  },
+  {
+    "Method": "AND(boolean, boolean, \u00e2\u20ac\u00a6)",
+    "Return Type": "boolean",
+    "Description": "Returns true if all its arguments are true; returns false if any argument is false"
+  },
+  {
+    "Method": "OR(boolean, boolean, \u00e2\u20ac\u00a6)",
+    "Return Type": "boolean",
+    "Description": "Returns true if any argument is true; returns false if all arguments are false"
+  },
+  {
+    "Method": "IsNull(object) IsDBNull(object)",
+    "Return Type": "boolean",
+    "Description": "Determines whether or not a given expression is a DBNull value"
+  },
+  {
+    "Method": "IsNumeric(object)",
+    "Return Type": "boolean",
+    "Description": "Determines whether or not a given expression is a Numeric Numeric value"
+  },
+  {
+    "Method": "IsBetween(object,low,high)",
+    "Return Type": "boolean",
+    "Description": "Determines whether or not a given NUMERIC expression is between a low and high value"
+  },
+  {
+    "Method": "IsEqualTo(object, value)",
+    "Return Type": "boolean",
+    "Description": "Determines whether or not a given NUMERIC expression is equal to a value"
+  },
+  {
+    "Method": "IsGreaterThan(object, value)",
+    "Return Type": "boolean",
+    "Description": "Determines whether or not a given NUMERIC expression is greater than a value"
+  },
+  {
+    "Method": "IsLessThan(object, value)",
+    "Return Type": "boolean",
+    "Description": "Determines whether or not a given NUMERIC expression is less than a value"
+  }
+]

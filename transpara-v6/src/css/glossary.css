@@ -1,0 +1,55 @@
+.glossary {
+  cursor: help;
+}
+
+.glossary .glossary-word {
+  text-decoration: underline;
+  color: var(--transpara-primary-color1);
+  font-weight: 500;
+}
+
+.glossary .popup {
+  position: absolute;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  margin-top: 0.8rem;
+}
+
+.glossary .top-arrow:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #f0f0f0;
+  top: -15px;
+  left: 30px;
+}
+
+.glossary .top-arrow:before {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 15px solid #ccc;
+  top: -15px;
+  left: 30px;
+}
+
+.glossary .popup p {
+  margin: 0;
+}
+
+.glossary:hover .popup {
+  transform: translateY(0);
+}

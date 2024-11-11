@@ -1,0 +1,38 @@
+[
+  {
+    "Prerequisite": "Version",
+    "Details": "Windows Server 2008 R2 or newer"
+  },
+  {
+    "Prerequisite": "User Rights",
+    "Details": "Local Admin"
+  },
+  {
+    "Prerequisite": ".NET Framework",
+    "Details": ".Net 4.5.2\u00a0or newer"
+  },
+  {
+    "Prerequisite": "Windows Server Roles",
+    "Details": "IIS 7, 7.5 or 8\u00a0Enabled\n  ASP.NET 4.0 Allowed (in ISAPI and CGI Restrictions)"
+  },
+  {
+    "Prerequisite": "Windows Server Features",
+    "Details": "The following items should be checked in the Windows Server Manager:\nWeb Server > Common HTTP Features: Default Document; Directory Browsing; HTTP Errors; Static Content\nWeb Server > Health and Diagnostics: HTTP Logging\nWeb Server > Performance:\u00a0Static Content\u00a0Compression; Dynamic Content Compression\nWeb Server > Security: Request Filtering; Basic Authentication & Windows Authentication\nWeb Server > Application Development: .NET Extensibility 4.5; ASP.NET 4.5; ISAPI Extensions; ISAPI Filters\nManagement Tools: IIS Management Console"
+  },
+  {
+    "Prerequisite": "Microsoft SQL Server",
+    "Details": "SQL 2005 or newer installed, or LAN access to one of them"
+  },
+  {
+    "Prerequisite": "SQL Server Tools",
+    "Details": "SQL Management Studio installed"
+  },
+  {
+    "Prerequisite": "SQL Server Network Configuration",
+    "Details": "Protocols enabled: Named Pipes; TCP/IP"
+  },
+  {
+    "Prerequisite": "Database Rights",
+    "Details": "Rights to create a database\n  Rights to create a user"
+  }
+]
