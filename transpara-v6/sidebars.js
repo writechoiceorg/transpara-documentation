@@ -26,16 +26,16 @@ const sidebars = {
   docs: [
     {
       type: 'html',
-      value: '<span class=\'sidebar_title\'>Getting Started</span>',
+      value: '<span class=\'transpara_sidebar_title\'>Getting Started</span>',
       defaultStyle: true,
-      className: 'sidebar_title',
+      className: 'transpara_sidebar_title',
     },
     ...gettingStarted,
     {
       type: 'html',
-      value: '<span class=\'sidebar_title\'>tCalc</span>',
+      value: '<span class=\'transpara_sidebar_title\'>tCalc</span>',
       defaultStyle: true,
-      className: 'sidebar_title',
+      className: 'transpara_sidebar_title',
     },
     ...tcalc,
   ],

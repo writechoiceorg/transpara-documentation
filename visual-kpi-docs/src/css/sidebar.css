@@ -48,7 +48,7 @@ ul.breadcrumbs {
   margin: 8px 0;
 }
 
-.sidebar_title {
+.transpara_sidebar_title {
   /* padding-left: 0 !important; */
   text-transform: uppercase;
   margin: 24px 0 5px !important;
@@ -61,7 +61,7 @@ ul.breadcrumbs {
   line-height: 18px;
 }
 
-.sidebar_title:first-child {
+.transpara_sidebar_title:first-child {
   margin-top: 10px !important;
 }
 
