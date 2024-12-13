@@ -21,7 +21,7 @@ To access the Visual KPI documentation page related to the main branch of this p
 ## Project Organization
 
 To contribute or request modifications and updates, please create an issue. When creating issues, be sure to assign relevant labels to facilitate project organization. You can find a list of existing labels [here](https://github.com/transpara/documentation/labels). Additionally, you have the option to create branches and assign collaborators to them.
-All new issues are initially allocated to the "ToDo" column within the [Project](https://github.com/orgs/transpara/projects/19) board of the project repository.
+All new issues are initially allocated to the "ToDo" column within the [Project](https://github.com/orgs/transpara/projects/19) board of the project repository. 
 
 ## Branches Organization
 
