@@ -4,10 +4,11 @@
 }
 
 .accordion_container {
-  border: 1px solid #E5E6E9;
+  border: 1px solid #e5e6e9;
   display: flex;
-  transition: all .2s;
+  transition: all 0.2s;
   margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .accordion_group .accordion_container {
@@ -46,8 +47,8 @@
 }
 
 .accordion_container .control-icon {
-  fill: #A6AEBB;
-  transition: .3s ease;
+  fill: #a6aebb;
+  transition: 0.3s ease;
   pointer-events: none;
 }
 
@@ -61,7 +62,7 @@
 
 details[open] .control-icon-close {
   display: initial;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 details[open] .control-icon-expand {
@@ -72,7 +73,6 @@ details[open] summary {
   border-bottom: 0;
   border-end-end-radius: 0;
 }
-
 
 .accordion_container summary {
   padding: 0.8rem 1rem;
@@ -121,17 +121,17 @@ details[open] summary {
 }
 
 details[open] div {
-  animation: sweep .3s ease-in-out;
+  animation: sweep 0.3s ease-in-out;
 }
 
 @keyframes sweep {
   0% {
     opacity: 0;
-    margin-left: -10px
+    margin-left: -10px;
   }
 
   100% {
     opacity: 1;
-    margin-left: 0px
+    margin-left: 0px;
   }
 }
