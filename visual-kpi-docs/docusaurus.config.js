@@ -5,6 +5,9 @@ const {themes} = require('prism-react-renderer');
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
+const myRegexFilterSetupAndAdministration = new RegExp("/reference/setup-and-administration");
+const myRegexFilterVisualKpiDesigner = new RegExp("/reference/visual-kpi-designer/");
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   themes: [
@@ -14,7 +17,9 @@ const config = {
         // ... Your options.
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        searchResultContextMaxLength: 100
+        searchResultContextMaxLength: 100,
+        ignoreFiles: [myRegexFilterSetupAndAdministration,myRegexFilterVisualKpiDesigner],
+
         // For Docs using Chinese, The `language` is recommended to set to:
         // ```
         // language: ["en", "zh"],
