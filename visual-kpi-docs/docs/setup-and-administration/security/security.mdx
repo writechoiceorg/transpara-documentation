@@ -15,16 +15,6 @@ Security in Visual KPI is multi-level. To understand the security measures we im
 - **Authorization** refers to a collection of users (assigned to AD Groups) with predefined access. A user must belong to an AD Group to gain access to a particular site in Visual KPI. Data may not be available to the user group on that site unless the group also has the appropriate rights assignment.
 - **Rights assignment** determines what information a user should have access to and what is blocked once the user has proven, with valid credentials, that he is a legit user with authorized access. Visual KPI Server and Active Directory are used to manage rights assignment.
 
-To understand how the entire security path works in Visual KPI, think of these fundamental steps (each of which may require a multi-step process to set up):
-
-1. Data encryption for transmission between the Web server and Visual KPI client. https://www.transpara.com/knowledge-base/enable-encryption/
-
-2. Validation of user ID and password for authorized access to any Visual KPI client. https://www.transpara.com/knowledge-base/security-create-local-groups/
-
-3. Inclusion of users with authorized access to an Active Directory Group. https://www.transpara.com/knowledge-base/security-create-local-groups/
-
-4. Rights assignment to each Active Directory Group. https://www.transpara.com/knowledge-base/visual-kpi-object-level-security/
-
 ## Who Sees What?
 
 Rights assignment can be managed globally or locally. In other words, a security group can have access to everything or only certain portions of the Visual KPI site.
@@ -47,6 +37,4 @@ Unfortunately, one of the greatest threats to your sensitive data could come fro
 
 ## Get Started with Visual KPI Security and Encryption
 
-Setting up security and encryption in Visual KPI is straightforward when you use Visual KPI Server Manager integrated with IIS Manager.
-
-If you just need the basic steps, read the Security Quickstart (https://www.transpara.com/knowledge-base/enable-security/), which includes links to more detailed steps. If you're not comfortable following the Quickstart and really need a deep dive into Visual KPI security, follow the articles below (preferably in order) to learn how security works in Visual KPI and how to set it up for your system.
+Setting up security and encryption in Visual KPI is straightforward when you use Visual KPI Server Manager integrated with IIS Manager. Learn more about how Visual KPI security works with the [Security Inheritance](/docs/setup-and-administration/security/security-inheritance) guide or [Enable Security](/docs/setup-and-administration/security/enable-security) with our step-by-step guide.
