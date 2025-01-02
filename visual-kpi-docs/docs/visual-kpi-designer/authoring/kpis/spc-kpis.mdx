@@ -14,6 +14,12 @@ import IframeComponent from '@site/src/components/Video/IframeComponent';
 
 SPC rules allow you to view trends and alerts on data to determine how in or out of control it is based on rules. For example, you have lab samples that need to be charted so you can see when something needs attention because it violates the acceptable control limit(s).
 
+:::tip What is SPC?
+
+Need some more basic information on what is SPC and SPC graphics in Visual KPI? You can find that information on [this guide page](/docs/end-user/features/visualizations/trends).
+
+:::
+
 Visual KPI allows you to display SPC-based charts quickly and easily using the four most popular Western Electric rules without having to invest in complicated SPC software. While Visual KPI doesn't cover every possible function of SPC, it does allow you to set up your KPIs using SPC rules in just minutes, and you don't need extensive training or knowledge to apply the four most commonly used SPC rules to your KPIs.
 
 :::note Using SPC Rules
@@ -22,28 +28,16 @@ Click the label of any of the four rules in Visual KPI Designer to open the link
 
 :::
 
-## What is SPC?
-
-[Statistical Process Control (SPC)](https://en.wikipedia.org/wiki/Statistical_process_control) is a method for monitoring, controlling, and improving processes based on statistical analysis. It measures whether processes are within control limits.
-
-You can use SPC rules to measure quality and productivity. Data is plotted on control charts over a time range using standard deviations and other statistics so you can quickly visualize and analyze it and see when a process is out of control and needs attention.
-
-SPC contains a handy set of rules for defining control limits in cases where time values don't correlate. An example would be data collected from lab samples or tracking blood sugar results in diabetes patients.
-
-By charting the data over time and using statistical decision rules, you can determine whether your process or data is stable or has variations that denote instability. You can see where improvements need to be made or take action in real-time with processes outside control limits.
-
-When you apply SPC rules, a KPI may be charted with a Center Line (control value or xBar) or at 1, 2, or 3 standard deviations.
-
-<StylizedImage
-  imgURL="img/designer/kpis-spc.png"
-  alt="KPI SPC Example"
-/>
-
 ## How do SPC rules work in Visual KPI?
 
 In Visual KPI, SPC is a type of trend, but its limits are set according to SPC rules. You can use Western Electric rules and enter data manually or use an interface to collect data and calculate and chart a KPI based on these rules. In Visual KPI Designer, you can configure KPIs using the four most common [SPC rules](https://en.wikipedia.org/wiki/Statistical_process_control).
 
 When enabled for a KPI, users on your Visual KPI site will visualize the KPI as a line chart (trend) with a center line (control value) and upper and lower limit values representing violations. In other words, the chart can be used to see if data is not within control limits so someone can take action.
+
+<StylizedImage
+  imgURL="img/designer/kpis-spc.png"
+  alt="KPI SPC Example"
+/>
 
 To use SPC rules in Visual KPI, all limits must be symmetric. Visual KPI does not manage asymmetrical control limits. Visual KPI is not a full SPC implementation system. It helps implement controls on uncorrelated systems in those rare cases you may need to do so.
 
